@@ -57,6 +57,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 	font-weight:100;
 }
+
 /*-- Navigation --*/
 /* Effect 20: 3D side */
 .cl-effect-20 a {
@@ -159,7 +160,7 @@ body {
 }
 	.navbar-wrapper .container {
 	padding-right: 15px;
-    padding-left: 15px;
+    padding-left: 10px;
 }
 	.navbar-wrapper .navbar {
     padding-right: 0;
@@ -168,6 +169,11 @@ body {
 	.navbar-wrapper .navbar {
     border-radius: 4px;
 }
+.navbar-custom{background-color:transparent;padding:25px 0;-webkit-transition:padding .3s;-moz-transition:padding .3s;transition:padding .3s;border:none}
+ .navbar-custom .navbar-brand{font-size:2em;-webkit-transition:all .3s;-moz-transition:all .3s;transition:all .3s}
+ .navbar-custom .navbar-nav>.active>a{border-radius:3px}
+ .navbar-custom.affix{background-color:#073855;padding:0px 0}
+ .navbar-custom.affix .navbar-brand{font-size:1.5em}
 }
 /*-- /Navigation --*/
 /*-- Banner Section --*/
@@ -204,7 +210,7 @@ section.about-us h3.text-center, section.our-services h3.text-center, section.ou
 section.about-us p.text-center , section.our-services p.text-center, section.our-events p.text-center, section.our-gallery p.text-center, section.our-testimonials p.text-center, section.our-contacts p.text-center {
 	font-size:18px;
 	font-weight:300;
-	padding:10px 0 50px;
+	padding:20px 0 50px;
 }
 section.about-us .about-info h4 {
 	font-size:25px;
@@ -480,7 +486,7 @@ section.our-contacts .form-control {
     padding: 16px 12px;
     font-size: 19px;
 	color:#fff;
-	background-color: rgba(0, 0, 0, 0.48);
+	background-color: rgba( 7, 56, 85, 0.3);
 }
 input::-webkit-input-placeholder {
 color:#fff!important;
@@ -517,7 +523,7 @@ textarea.form-control {
 }
 .btn-outline1 {
     margin-top: 15px;
-    border: solid 2px #fff;
+    border: solid 2px #1396e2;
     font-size: 20px;
     color:#fff;
 	width:100%;
@@ -531,21 +537,21 @@ textarea.form-control {
 .btn-outline1:hover,
 .btn-outline1:focus,
 .btn-outline1:active {
-    border: solid 2px #fff;
-    color:#A29D26;
-    background:#fff;
+    border: solid 2px #1396e2;
+    color:#fff;
+    background:#1396e2;
 }  
 button.btn-outline1 {
 	padding: 11px 50px;
     font-size: 21px;
     width: 100%;
 	font-family: 'Montserrat', sans-serif;
-	background-color: rgba(0, 0, 0, 0.22);
+	background-color: rgba( 7, 56, 85, 0.3);
 }
 /*-- /Contact Section --*/
 /*-- Footer --*/
 section.footer {
-	background-color:#222;
+	background-color:#073855;
 	padding: 60px 0 50px;
 	color:#fff;
 }
@@ -792,9 +798,15 @@ section.footer .footer-right ul.social-icons2 li a i.fa.fa-google-plus:hover {
 /*-- /slide animations --*/
 /*-- Back To Top --*/
 .cd-top {
-  display: inline-block;
-  height: 40px;
-  width: 40px;
+ display: inline-block;
+
+	
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+ 
+  height: 50px;
+  width: 50px;
   position: fixed;
   bottom: 40px;
   right: 10px;
@@ -803,9 +815,9 @@ section.footer .footer-right ul.social-icons2 li a i.fa.fa-google-plus:hover {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: rgba(0, 0, 0, 0.5) url(../images/cd-top-arrow.svg) no-repeat center 50%;
+  background: #073855 url(../images/cd-top-arrow.svg) no-repeat center 50%;
   visibility: hidden;
-    background-size: 40px;
+    background-size: 20px;
   opacity: 0;
   -webkit-transition: opacity .3s 0s, visibility 0s .3s;
   -moz-transition: opacity .3s 0s, visibility 0s .3s;
@@ -826,7 +838,7 @@ section.footer .footer-right ul.social-icons2 li a i.fa.fa-google-plus:hover {
   opacity: .5;
 } 
 .cd-top:hover {
-  background-color:#080808;
+  background-color:#1396e2;
   opacity: 1;
 }
 @media only screen and (min-width: 768px) {

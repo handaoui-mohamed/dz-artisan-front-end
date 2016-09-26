@@ -6,19 +6,66 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Outing Travel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Catchy Carz Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <!-- css files -->
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+
+
+<link href="css/style213.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<link href="css/style3.css" rel='stylesheet' type='text/css' />	
+
+<script src="js/jquery21-1.11.1.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/zoomslider.css" />
+
+
 <!-- /css files -->
 <!-- font files -->
 <link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
- <link href="css/agency.min.css" rel="stylesheet">
+ 
 <!-- /font files -->
 <!-- js files -->
 <script src="js/modernizr.custom.js"></script>
+
+
+<script type="text/javascript" src="js/modernizr-2.6.2.min.js"></script>
 <!-- /js files -->
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places">
+    </script>
+<script src="js/jquery.placepicker.js"></script>
+
+    <script>
+
+      $(document).ready(function() {
+
+        // Basic usage
+        $(".placepicker").placepicker();
+
+        // Advanced usage
+        $("#advanced-placepicker").each(function() {
+          var target = this;
+          var $collapse = $(this).parents('.form-group').next('.collapse');
+          var $map = $collapse.find('.another-map-class');
+
+          var placepicker = $(this).placepicker({
+            map: $map.get(0),
+            placeChanged: function(place) {
+              console.log("place changed: ", place.formatted_address, this.getLocation());
+            }
+          }).data('placepicker');
+        });
+
+      }); // END document.ready
+
+    </script>
 <script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){
@@ -27,11 +74,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		});
 </script>
+
 </head>
+
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 <div class="navbar-wrapper">
     <div class="container">
-		<nav class="navbar navbar-inverse navbar-static-top cl-effect-20  navbar-fixed-top" >
+		<nav id="mainNav" class="navbar navbar-inverse navbar-static-top cl-effect-20 navbar-custom navbar-fixed-top  " >
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -40,17 +89,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.html">Dz-Artisans</a>
+				
 				</div>
 				<div id="navbar" class="navbar-collapse collapse navbar-right">
 					<ul class="nav navbar-nav">
-						<li><a href="#"><span data-hover="Home">Home</span></a></li>
-						<li><a href="#about"><span data-hover="About">About</span></a></li>
-						<li><a href="#service"><span data-hover="Services">Services</span></a></li>
-						<li><a href="#events"><span data-hover="Events">Events</span></a></li>
-						<li><a href="#gallery"><span data-hover="Gallery">Gallery</span></a></li>
-						<li><a href="#testimonials"><span data-hover="Testimonials">Testimonials</span></a></li>
-						<li><a href="#contact"><span data-hover="Contact">Contact</span></a></li>
+						<li><a href="#"><span data-hover="Accueil">Accueil</span></a></li>
+						<li><a href="#events"><span data-hover="Services">Services</span></a></li>
+						<li><a href="#gallery"><span data-hover="A propos">A propos</span></a></li>
+						<li><a href="#testimonials"><span data-hover="Contactez-nous">Contactez-nous</span></a></li>
+						<li><a href="#contact"><span data-hover="Se connecter">Se connecter</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -60,42 +107,68 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- Banner Section -->
 <!-- Carousel
     ================================================== -->
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-         <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-			<img class="first-slide" src="images/banner1.jpg" alt="First slide">
-        </div>
-        <div class="item">
-			<img class="second-slide" src="images/banner2.jpg" alt="Second slide">
-        </div>
-        <div class="item">
-			<img class="third-slide" src="images/banner3.jpg" alt="Third slide">
-        </div>
-        <div class="item">
-			<img class="foor-slide" src="images/banner4.jpg" alt="foor slide">
-        </div>
-    </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div><!-- /.carousel -->
-<!-- /Banner Section -->
+<!--/banner-section-->
+	<div d="demo-1" class="carousel slide" data-zs-src='["images/2.jpg", "images/1.jpg", "images/3.jpg", "images/4.jpg"]' data-zs-overlay="dots">
+	<div class="demo-inner-content">
+		 
+		    <!--banner-info-->
+			<div class="banner-info" >
+			 
+			       <form action="#" method="post">
+			
+	
+					
+		<div class="container1">
+		<div class="b_room">
+				<div class="booking_room"><br />
+					<div class="reservation">
+						
+						<ul>
+							<li class="span1_of_1">
+								
+								 <form>
+									<input id="advanced-placepicker" class="form-control " data-map-container-id="collapseTwo"  type="text"  value="Votre Ville" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Votre Ville';}">
+								</form>
+							 </li>	
+							<li class="span1_of_1">
+								 
+								 <div class="section_room">
+									  <select id="country" onchange="change_country(this.value)" class=" form-control ">
+											<option value="null">Spécialité</option>
+											<option value="null">popular areas</option>         
+											<option value="AX">Maroubra</option>
+											<option value="AX">Ultimo</option>
+									  </select>
+								 </div>	
+							 </li>				  
+							 <li class="span1_of_3">
+									<div class="date_btn">
+										<form action="resturants.html">
+											<input type="submit" value="Trouver l'artisan">
+										</form>
+									</div>
+							 </li>
+								<div class="clearfix"></div>
+						</ul>
+					</div>
+				</div>	
+			</div>
+	
+	</div>
+	
+				
+	
+				</form>
+			</div>
+				<!--//banner-info-->	
+		</div>
+
+</div>
 <!-- About Section -->
 <section class="about-us" id="about">
-	<h3 class="text-center slideanim">About Us</h3>
-	<p class="text-center slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	<h3 class="text-center slideanim">
+À propos de Dz-Artisans</h3>
+	<p class="text-center slideanim"> Dz-Artisans est un plateforme pour trouver et prendre rendezvous avec l'artisan selon le choix et lieu de résidence et les besoins de client</p>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6">
@@ -103,9 +176,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="about-info">
-					<h4 class="slideanim">We're The Best</h4>
-					<p class="abt slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-					<p class="abt slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+					<h4 class="slideanim">Description</h4>
+					<p class="abt slideanim">Ensemble pour l'Algérie technologique et sophistiqué, notre projet consiste en la création d’un startup intervenant dans le secteur des services aux particuliers, plus précisément : aide à la personne, et qui est un portail en ligne a pour mission principale mettre en contact les différents artisans avec leurs clients en Algérie, .</p>
+					<p class="abt slideanim">pour trouver un artisan et fixer un rendez-vous est plus aussi difficile que cela était, à seulement quelques clics à travers le site Web & application mobile et l'artisan sera diponibl.</p>
 				</div>
 			</div>
 		</div>
@@ -116,148 +189,138 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <section class="our-services slideanim" id="service">
 	<h3 class="text-center slideanim">Our Services</h3>
 	<p class="text-center slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-	<div id="features">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 centered">
-					<!-- ACCORDION -->
-					<div class="accordion ac" id="accordion2">
-						<div class="accordion-group">
-							<div class="accordion-heading">
-								<a class="accordion-toggle slideanim" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">First Class Design</a>
-							</div><!-- /accordion-heading -->
-							<div id="collapseOne" class="accordion-body collapse in">
-								<div class="accordion-inner slideanim">
-									<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								</div><!-- /accordion-inner -->
-							</div><!-- /collapse -->
-						</div><!-- /accordion-group -->
-						<div class="accordion-group">
-							<div class="accordion-heading">
-								<a class="accordion-toggle slideanim" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Retina Ready Theme</a>
+<div class="medicinal-w3">
+				<div class="container">
+				   
+					<div class="medicinal-w3-grids one">
+						<div class="col-md-6 medicinal-w3-grid">
+							<div class="col-md-8 medicinal-w3-left">
+								<h4>Vous êtes un artian?</h4>
+								<p>Créez votre profil facilement et présentez vos réalisations à vos clients afin de vous faire connaitre. </p>
 							</div>
-							<div id="collapseTwo" class="accordion-body collapse">
-								<div class="accordion-inner slideanim">
-									<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								</div><!-- /accordion-inner -->
-							</div><!-- /collapse -->
-						</div><!-- /accordion-group -->
-						<div class="accordion-group">
-							<div class="accordion-heading">
-								<a class="accordion-toggle slideanim" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">Awesome Support</a>
+							<div class="col-md-4 medicinal-w3-right">
+								<div class="hi-icon-wrap hi-icon-effect-7 hi-icon-effect-7b">
+									<a href="#" class="hi-icon icon1"></a>
+								</div>
 							</div>
-							<div id="collapseThree" class="accordion-body collapse">
-								<div class="accordion-inner slideanim">
-									<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								</div><!-- /accordion-inner -->
-							</div><!-- /collapse -->
-						</div><!-- /accordion-group -->
-						<div class="accordion-group">
-							<div class="accordion-heading">
-								<a class="accordion-toggle slideanim" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">Responsive Design</a>
+							<div class="clearfix"></div>
+						</div>
+						<div class="col-md-6 medicinal-w3-grid">
+							<div class="col-md-4 medicinal-w3-right">
+								<div class="hi-icon-wrap hi-icon-effect-7 hi-icon-effect-7b">
+									<a href="#" class="hi-icon icon2"></a>
+								</div>
 							</div>
-							<div id="collapseFour" class="accordion-body collapse">
-								<div class="accordion-inner slideanim">
-									<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-								</div><!-- /accordion-inner -->
-							</div><!-- /collapse -->
-						</div><!-- /accordion-group -->
-					</div><!-- Accordion -->
-				</div>
-				<div class="col-md-6">
-					<img src="images/service-img.jpg" class="img-responsive slideanim" alt="service">
+							<div class="col-md-8 medicinal-w3-left1">
+								<h4>Vous êtes une entreprise d'artisanat?</h4>
+								<p>Créer votre site web et présentez vos services afin de toucher le maximum des clients sur toute l'Algérie. </p>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="medicinal-w3-grids">
+						<div class="col-md-6 medicinal-w3-grid">
+							<div class="col-md-8 medicinal-w3-left">
+								<h4>LOREM IPSUM DOLOR</h4>
+								<p>sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi. </p>
+							</div>
+							<div class="col-md-4 medicinal-w3-right">
+								<div class="hi-icon-wrap hi-icon-effect-7 hi-icon-effect-7b">
+									<a href="#" class="hi-icon icon3"></a>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="col-md-6 medicinal-w3-grid">
+							<div class="col-md-4 medicinal-w3-right">
+								<div class="hi-icon-wrap hi-icon-effect-7 hi-icon-effect-7b">
+									<a href="#" class="hi-icon icon4"></a>
+								</div>
+							</div>
+							<div class="col-md-8 medicinal-w3-left1">
+								<h4>LOREM IPSUM DOLOR</h4>
+								<p>sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi. </p>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
 				</div>
 			</div>
-		</div><!--/ .container -->
-	</div><!--/ #features -->
 </section>
 <!-- /Services Section -->
-<!-- Events -->
-<section class="our-events slideanim" id="events">
-	<h3 class="text-center slideanim">Our Events</h3>
-	<p class="text-center slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-4 col-md-4">
-				<div class="event-info">
-					<h4 class="text-center slideanim">March 24th</h4>
-					<p class="eve slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-4">
-				<div class="event-info">
-					<h4 class="text-center slideanim">March 26th</h4>
-					<p class="eve slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-4">
-				<div class="event-info">
-					<h4 class="text-center slideanim">March 28th</h4>
-					<p class="eve slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- /Events -->
-<!-- Gallery Section -->
-<section class="our-gallery" id="gallery">
-	<h3 class="text-center slideanim">Our Gallery</h3>
-	<p class="text-center slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-	<div class="container">
-		<img src="images/gallery-img1.jpg" data-darkbox="images/gallery-img1-1.jpg" data-darkbox-description="<b>Lorem Ipsum</b><br>Lorem ipsum dolor sit amet" class="img-responsive slideanim">
-        <img src="images/gallery-img2.jpg" data-darkbox="images/gallery-img2-2.jpg" data-darkbox-description="<b>Lorem Ipsum</b><br>Lorem ipsum dolor sit amet" class="img-responsive slideanim">
-		<img src="images/gallery-img3.jpg" data-darkbox="images/gallery-img3-3.jpg" data-darkbox-description="<b>Lorem Ipsum</b><br>Lorem ipsum dolor sit amet" class="img-responsive slideanim">
-		<img src="images/gallery-img4.jpg" data-darkbox="images/gallery-img4-4.jpg" data-darkbox-description="<b>Lorem Ipsum</b><br>Lorem ipsum dolor sit amet" class="img-responsive slideanim">
-		<img src="images/gallery-img5.jpg" data-darkbox="images/gallery-img5-5.jpg" data-darkbox-description="<b>Lorem Ipsum</b><br>Lorem ipsum dolor sit amet" class="img-responsive slideanim">
-		<img src="images/gallery-img6.jpg" data-darkbox="images/gallery-img6-6.jpg" data-darkbox-description="<b>Lorem Ipsum</b><br>Lorem ipsum dolor sit amet" class="img-responsive slideanim">
-		<img src="images/gallery-img7.jpg" data-darkbox="images/gallery-img7-7.jpg" data-darkbox-description="<b>Lorem Ipsum</b><br>Lorem ipsum dolor sit amet" class="img-responsive slideanim">
-		<img src="images/gallery-img8.jpg" data-darkbox="images/gallery-img8-8.jpg" data-darkbox-description="<b>Lorem Ipsum</b><br>Lorem ipsum dolor sit amet" class="img-responsive slideanim">
-	</div>
-</section>
+
+
 <!-- /Gallery Section -->
 <!-- Testimonials -->
 <section class="our-testimonials slideanim" id="testimonials">
 	<h3 class="text-center slideanim">What Our Clients Say</h3>
 	<p class="text-center slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-4 col-md-4">
-				<div class="test">
-					<img src="images/test-img1.png" class="img-responsive slideanim" alt="">
-					<h4 class="text-center slideanim">Lorem Ipsum</h4>
-					<p class="t1 slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+	<div id="review" class="testimonials-review">
+		<div class="container">
+		
+				<div class="testimonials">
+				  <div class="monials">
+				      <!--//screen-gallery-->
+						<div class="sreen-gallery-cursual">
+							 <!-- required-js-files-->
+							<link href="css/owl.carousel.css" rel="stylesheet">
+							    <script src="js/owl.carousel.js"></script>
+							        <script>
+							    $(document).ready(function() {
+							      $("#owl-demo").owlCarousel({
+							        items : 1,
+							        lazyLoad : true,
+							        autoPlay : true,
+							        navigation : false,
+							        navigationText :  false,
+							        pagination : true,
+							      });
+							    });
+							    </script>
+								 <!--//required-js-files-->
+						       <div id="owl-demo" class="owl-carousel">
+					                   <div class="item-owl">
+
+                                            <p class="speech">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id arcu neque, at convallis est felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id arcu neque, at convallis est felis.</p>
+                                            <div class="client-info">
+                                                <img src="images/t1.jpg" alt=" " />
+
+                                                <h4>John Allen</h4>
+                                                <span>Lorem ipsum dolor</span>
+                                            </div>
+                                        </div><!-- /.item -->
+					                     <div class="item-owl">
+
+                                            <p class="speech">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id arcu neque, at convallis est felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id arcu neque, at convallis est felis.</p>
+                                            <div class="client-info">
+                                                <img src="images/t2.jpg" alt=" " />
+
+                                                <h4>John Doe</h4>
+                                                <span>Lorem ipsum dolor</span>
+                                            </div>
+                                        </div><!-- /.item -->
+					                      <div class="item-owl">
+										  <p class="speech">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id arcu neque, at convallis est felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id arcu neque, at convallis est felis.</p>
+                                            <div class="client-info">
+                                                <img src="images/t3.jpg" alt=" " />
+
+                                                <h4>John Leo</h4>
+                                                <span>Lorem ipsum dolor</span>
+                                            </div>
+                                        </div><!-- /.item -->
+				              </div>
+						<!--//screen-gallery-->
+					</div>
 				</div>
-			</div>
-			<div class="col-lg-4 col-md-4">
-				<div class="test">
-					<img src="images/test-img2.png" class="img-responsive slideanim" alt="">
-					<h4 class="text-center slideanim">Lorem Ipsum</h4>
-					<p class="t1 slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-4">
-				<div class="test">
-					<img src="images/test-img3.png" class="img-responsive slideanim" alt="">
-					<h4 class="text-center slideanim">Lorem Ipsum</h4>
-					<p class="t1 slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
+				<div class="clearfix"> </div>
 			</div>
 		</div>
-	</div>
+	
 </section>
 <!-- Testimonials -->
-<!-- Google Map -->
-<section class="map">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-12 slideanim">
-				<iframe class="googlemaps" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d380510.6741687111!2d-88.01234121699822!3d41.83390417061058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1455598377120" frameborder="0" style="border:0" allowfullscreen></iframe>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- /Google Map -->
+
 <!-- Contact Section -->
 <section class="our-contacts slideanim" id="contact">
 	<h3 class="text-center slideanim">Contact Us</h3>
@@ -358,7 +421,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- /Back To Top -->
 
 <!-- js files -->
-<script src="js/jquery.min.js"></script>
+
 <script src="js/bootstrap.min.js"></script>
 <script src="js/SmoothScroll.min.js"></script>
 <!-- js for gallery -->
@@ -404,5 +467,10 @@ $(window).scroll(function() {
 </script>
 <!-- /js for slide animations -->
 <!-- /js files -->
+    <script src="js/agency.min.js"></script>
+
+
+
+<script type="text/javascript" src="js/jquery.zoomslider.min.js"></script>
 </body>
 </html>
