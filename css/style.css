@@ -238,11 +238,11 @@ section.our-services {
 	-o-background-size:cover;
 }
 section.our-services h3.text-center{ 
-	color:#fff;
+	color:#000;
 	font-family: 'Montserrat', sans-serif;
 }
 section.our-services p.text-center{ 
-	color: #D2D1D1;
+	color: #0000;
 }
 #features .ac a{
 	font-size: 20px;
@@ -862,11 +862,17 @@ section.footer .footer-right ul.social-icons2 li a i.fa.fa-google-plus:hover {
 	.carousel, .carousel .item {
     height: 795px;
 }
+	.carouselogin, .carouselogin .item {
+    height: 295px;
+}
 }
 
 @media (max-width: 1366px) {
 .carousel, .carousel .item {
     height: 759px;
+}
+.carouselogin, .carouselogin .item {
+    height: 259px;
 }
 }
 
@@ -874,11 +880,17 @@ section.footer .footer-right ul.social-icons2 li a i.fa.fa-google-plus:hover {
 .carousel, .carousel .item {
     height: 710px;
 }
+.carouselogin, .carouselogin .item {
+    height: 210px;
+}
 }
 
 @media (max-width: 1080px) {
 .carousel, .carousel .item {
     height: 598px;
+}
+.carouselogin, .carouselogin .item {
+    height: 198px;
 }
 .nav>li>a {
 	padding: 15px 6px;
@@ -916,11 +928,17 @@ section.footer .footer-center .form-control {
 .carousel, .carousel .item {
     height: 581px;
 }
+.carouselogin, .carouselogin .item {
+    height: 110px;
+}
 }
 
 @media (max-width: 1024px) {
 .carousel, .carousel .item {
     height: 565px;
+}
+.carouselogin, .carouselogin .item {
+    height: 110px;
 }
 section.about-us {
     padding: 50px 0 80px;
@@ -963,6 +981,9 @@ section.footer {
 .carousel, .carousel .item {
     height: 548px;
 }
+.carouselogin, .carouselogin .item {
+    height: 110px;
+}
 section.about-us p.abt {
     font-size: 15px;
 }
@@ -992,6 +1013,9 @@ section.our-testimonials .test {
 .carousel, .carousel .item {
     height: 497px;
 }
+.carouselogin, .carouselogin .item {
+    height: 110px;
+}
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
     margin: -15px 0 30px 245px;
 }
@@ -1014,11 +1038,17 @@ section.our-events h4.text-center {
 .carousel, .carousel .item {
     height: 440px;
 }
+.carouselogin, .carouselogin .item {
+    height: 110px;
+}
 }
 
 @media (max-width: 768px) {
 .carousel, .carousel .item {
     height: 423px;
+}
+.carouselogin, .carouselogin .item {
+    height: 110px;
 }
 .col-lg-4.footer-center {
     padding: 30px 30px;
@@ -1042,6 +1072,9 @@ section.footer .footer-center .form-control {
 }
 .carousel, .carousel .item {
     height: 350px;
+}
+.carouselogin, .carouselogin .item {
+    height: 110px;
 }
 section.about-us {
 	text-align:-webkit-center;
@@ -1073,6 +1106,9 @@ section.footer .footer-center .form-control {
 .carousel, .carousel .item {
     height: 311px;
 }
+.carouselogin, .carouselogin .item {
+    height: 110px;
+}
 .contact-info {
     margin-left: 185px;
 }
@@ -1088,6 +1124,9 @@ section.footer .footer-center .form-control {
 .carousel, .carousel .item {
     height: 328px;
 }
+.carouselogin, .carouselogin .item {
+    height: 110px;
+}
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
     margin: -10px 0 30px 185px;
 }
@@ -1096,6 +1135,9 @@ section.footer .footer-center .form-control {
 @media (max-width: 568px) {
 .carousel, .carousel .item {
     height: 256px;
+}
+.carouselogin, .carouselogin .item {
+    height: 110px;
 }
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
     margin: -10px 0 30px 170px;
@@ -1142,6 +1184,9 @@ section.our-testimonials .test {
 @media (max-width: 414px) {
 .carousel, .carousel .item {
     height: 223px;
+}
+.carouselogin, .carouselogin .item {
+    height: 110px;
 }
 #features p {
     font-size: 16px;
@@ -1200,6 +1245,9 @@ section.footer h4 {
 .carousel, .carousel .item {
     height: 206px;
 }
+.carouselogin, .carouselogin .item {
+    height: 110px;
+}
 section.our-gallery img.img-responsive {
     width: 165px;
 }
@@ -1228,6 +1276,9 @@ section.map iframe.googlemaps {
 .carousel, .carousel .item {
     height: 201px;
 }
+.carouselogin, .carouselogin .item {
+    height: 110px;
+}
 section.our-gallery img.img-responsive {
     width: 160px;
 }
@@ -1242,6 +1293,9 @@ section.our-testimonials p.t1 {
 @media (max-width: 320px) {
 .carousel, .carousel .item {
     height: 170px;
+}
+.carouselogin, .carouselogin .item {
+    height: 110px;
 }
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
 	font-size: 30px;
