@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .controller('IndexController', IndexController);
+        .controller('AppController', AppController);
     
-    function IndexController() {
+    function AppController() {
         console.log('working');
     }
 })();
