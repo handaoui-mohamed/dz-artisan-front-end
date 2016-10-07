@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dz artisan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+
+<!-- css files -->
+<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="assets/css/zoomslider.css" />
+
+<!-- Custom Theme files -->
+<link href="assets/css/style3.css" rel='stylesheet' type='text/css' />	
+<link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="assets/css/style213.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../bower_components/angular/angular-csp.css" rel="stylesheet" type="text/css" media="all" />
+ 
+<!-- js files -->
+<script src="assets/js/modernizr.custom.js"></script>
+<script src="assets/js/jquery21-1.11.1.min.js"></script>
+<script type="text/javascript" src="assets/js/modernizr-2.6.2.min.js"></script>
+<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>-->
+<script src="assets/js/jquery.placepicker.js"></script>
+<!--<script>
+
+	$(document).ready(function() {
+
+	// Basic usage
+	$(".placepicker").placepicker();
+
+	// Advanced usage
+	$("#advanced-placepicker").each(function() {
+		var target = this;
+		var $collapse = $(this).parents('.form-group').next('.collapse');
+		var $map = $collapse.find('.another-map-class');
+
+		var placepicker = $(this).placepicker({
+		map: $map.get(0),
+		placeChanged: function(place) {
+			console.log("place changed: ", place.formatted_address, this.getLocation());
+		}
+		}).data('placepicker');
+	});
+
+	}); // END document.ready
+
+</script>-->
+<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+</script>
+
+</head>
+
+<body ng-app="app" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<div class="navbar-wrapper">
+    <div class="container">
+		<nav id="mainNav" class="navbar navbar-inverse navbar-static-top cl-effect-20 navbar-custom navbar-fixed-top  " >
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				
+				</div>
+				<div id="navbar" class="navbar-collapse collapse navbar-right">
+					<ul class="nav navbar-nav">
+						<li><a href="#index.html"><span data-hover="Accueil">Accueil</span></a></li>
+						<li><a href="#events"><span data-hover="Services">Services</span></a></li>
+						<li><a href="#gallery"><span data-hover="A propos">A propos</span></a></li>
+						<li><a href="#testimonials"><span data-hover="Contactez-nous">Contactez-nous</span></a></li>
+						<li><a href="login.html"><span data-hover="Se connecter">Se connecter</span></a></li>
+					</ul>
+				</div>
+			</div>
+        </nav>
+    </div>
+</div>
+
+<!-- top carousel and search bar-->
+<div d="demo-1" class="carousel slide"
+		data-zs-src='[
+		"assets/images/2.jpg", 
+		"assets/images/1.jpg", 
+		"assets/images/3.jpg", 
+		"assets/images/4.jpg"]' data-zs-overlay="dots">
+
+	<div class="demo-inner-content">
+		<div class="banner-info" >
+			 <form action="#" method="post">	
+				<div class="container1">
+				<div class="b_room">
+						<div class="booking_room"><br />
+							<div class="reservation">
+								<ul>
+									<li class="span1_of_1">
+										<form>
+											<input id="advanced-placepicker" class="form-control " 
+												   data-map-container-id="collapseTwo"  type="text"  
+												   value="Votre Ville" onfocus="this.value = '';" 
+												   onblur="if (this.value == '') {this.value = 'Votre Ville';}">
+										</form>
+									</li>	
+									<li class="span1_of_1">
+										<div class="section_room">
+											<select id="country" onchange="change_country(this.value)" class=" form-control ">
+													<option value="null">Spécialité</option>
+													<option value="null">popular areas</option>         
+													<option value="AX">Maroubra</option>
+													<option value="AX">Ultimo</option>
+											</select>
+										</div>	
+									</li>				  
+									<li class="span1_of_3">
+										<div class="date_btn">
+											<form action="resturants.html">
+												<input type="submit" value="Trouver l'artisan">
+											</form>
+										</div>
+									</li>
+									<div class="clearfix"></div>
+								</ul>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- /top carousel and search bar-->
+
+<!-- About Section -->
+<section class="about-us" id="about">
+	<h3 class="text-center slideanim">À propos de Dz-Artisans</h3>
+	<p class="text-center slideanim"> Dz-Artisans est un plateforme pour trouver et prendre rendezvous avec 
+									  l'artisan selon le choix et lieu de résidence et les besoins de client</p>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<img src="assets/images/about-img.jpg" alt="about" class="img-responsive slideanim">
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="about-info">
+					<h4 class="slideanim">Description</h4>
+					<p class="abt slideanim">
+						Ensemble pour l'Algérie technologique et sophistiqué, notre projet 
+						consiste en la création d’un startup intervenant dans le secteur des 
+						services aux particuliers, plus précisément : aide à la personne, et 
+						qui est un portail en ligne a pour mission principale mettre en contact 
+						les différents artisans avec leurs clients en Algérie, .
+					</p>
+					<p class="abt slideanim">
+						pour trouver un artisan et fixer un rendez-vous est plus aussi difficile que cela était, 
+						à seulement quelques clics à travers le site Web & application mobile et l'artisan sera diponibl.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /About Section -->
+
+<!-- Services Section -->
+<section class="our-services slideanim" id="service">
+	<h3 class="text-center slideanim">Our Services</h3>
+	<p class="text-center slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	<div class="medicinal-w3">
+		<div class="container">
+			
+			<div class="medicinal-w3-grids one">
+				<div class="col-md-6 medicinal-w3-grid">
+					<div class="col-md-8 medicinal-w3-left">
+						<h4>Vous êtes un artian?</h4>
+						<p>
+							Créez votre profil facilement et présentez vos réalisations à vos clients afin de vous 
+							faire connaitre. 
+						</p>
+					</div>
+					<div class="col-md-4 medicinal-w3-right">
+						<div class="hi-icon-wrap hi-icon-effect-7 hi-icon-effect-7b">
+							<a href="#" class="hi-icon icon1"></a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="col-md-6 medicinal-w3-grid">
+					<div class="col-md-4 medicinal-w3-right">
+						<div class="hi-icon-wrap hi-icon-effect-7 hi-icon-effect-7b">
+							<a href="#" class="hi-icon icon2"></a>
+						</div>
+					</div>
+					<div class="col-md-8 medicinal-w3-left1">
+						<h4>Vous êtes une entreprise d'artisanat?</h4>
+						<p>
+							Créer votre site web et présentez vos services afin de toucher le maximum des clients 
+							sur toute l'Algérie. 
+						</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="medicinal-w3-grids">
+				<div class="col-md-6 medicinal-w3-grid">
+					<div class="col-md-8 medicinal-w3-left">
+						<h4>LOREM IPSUM DOLOR</h4>
+						<p>
+							sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+							 totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi. 
+						</p>
+					</div>
+					<div class="col-md-4 medicinal-w3-right">
+						<div class="hi-icon-wrap hi-icon-effect-7 hi-icon-effect-7b">
+							<a href="#" class="hi-icon icon3"></a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="col-md-6 medicinal-w3-grid">
+					<div class="col-md-4 medicinal-w3-right">
+						<div class="hi-icon-wrap hi-icon-effect-7 hi-icon-effect-7b">
+							<a href="#" class="hi-icon icon4"></a>
+						</div>
+					</div>
+					<div class="col-md-8 medicinal-w3-left1">
+						<h4>LOREM IPSUM DOLOR</h4>
+						<p>
+							sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+							 totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi. 
+						</p>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /Services Section -->
+
+<!-- Testimonials -->
+<section class="our-testimonials slideanim" id="testimonials">
+	<h3 class="text-center slideanim">What Our Clients Say</h3>
+	<p class="text-center slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	<div id="review" class="testimonials-review">
+		<div class="container">
+				<div class="testimonials">
+				  <div class="monials">
+				      <!--//screen-gallery-->
+						<div class="sreen-gallery-cursual">
+							 <!-- required-js-files-->
+							<link href="assets/css/owl.carousel.css" rel="stylesheet">
+							    <script src="assets/js/owl.carousel.js"></script>
+							    <script>
+									$(document).ready(function() {
+										$("#owl-demo").owlCarousel({
+											items : 1,
+											lazyLoad : true,
+											autoPlay : true,
+											navigation : false,
+											navigationText :  false,
+											pagination : true,
+										});
+									});
+							    </script>
+								 <!--/required-js-files-->
+						       	<div id="owl-demo" class="owl-carousel">
+									<div class="item-owl">
+										<p class="speech">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id
+												arcu neque, at convallis est felis.Lorem ipsum dolor sit amet, consectetur
+												adipiscing elit. Pellentesque id arcu neque, at convallis est felis.
+										</p>
+										<div class="client-info">
+											<img src="assets/images/t1.jpg" alt=" " />
+											<h4>John Allen</h4>
+											<span>Lorem ipsum dolor</span>
+										</div>
+									</div>
+					                <div class="item-owl">
+										<p class="speech">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id arcu
+											 neque, at convallis est felis.Lorem ipsum dolor sit amet, 
+											 consectetur adipiscing elit. Pellentesque id arcu neque, 
+											 at convallis est felis.
+										</p>
+										<div class="client-info">
+											<img src="assets/images/t2.jpg" alt=" " />
+											<h4>John Doe</h4>
+											<span>Lorem ipsum dolor</span>
+										</div>
+									</div>
+									<div class="item-owl">
+										<p class="speech">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id 
+											arcu neque, at convallis est felis.Lorem ipsum dolor sit amet, consectetur
+											 adipiscing elit. Pellentesque id arcu neque, at convallis est felis.
+										</p>
+										<div class="client-info">
+											<img src="assets/images/t3.jpg" alt=" " />
+											<h4>John Leo</h4>
+											<span>Lorem ipsum dolor</span>
+										</div>
+									</div>
+				              </div>
+						</div>
+					</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+</section>
+<!-- /Testimonials -->
+
+<!-- Contact Section -->
+<section class="our-contacts slideanim" id="contact">
+	<h3 class="text-center slideanim">Contact Us</h3>
+	<p class="text-center slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<form role="form">
+					<div class="row">
+						<div class="form-group col-lg-4 slideanim">
+							<input type="text" class="form-control user-name" placeholder="Your Name" required/>
+						</div>
+						<div class="form-group col-lg-4 slideanim">
+							<input type="email" class="form-control mail" placeholder="Your Email" required/>
+						</div>
+						<div class="form-group col-lg-4 slideanim">
+							<input type="tel" class="form-control pno" placeholder="Your Phone Number" required/>
+						</div>
+						<div class="clearfix"></div>
+						<div class="form-group col-lg-12 slideanim">
+							<textarea class="form-control" rows="6" placeholder="Your Message" required/></textarea>
+						</div>
+						<div class="form-group col-lg-12 slideanim">
+							<button type="submit" href="#" class="btn-outline1">Submit</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /Contact Section -->
+
+<!-- Footer Section -->
+<section class="footer">
+	<h2 class="text-center">THANKS FOR VISITING US</h2>
+	<hr>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 footer-left">
+				<h4>Contact Information</h4>
+				<div class="contact-info">
+					<div class="address">
+						<i class="glyphicon glyphicon-globe"></i>
+						<p class="p3">77 Jack Street</p>
+						<p class="p4">Chicago, USA</p>
+					</div>
+					<div class="phone">
+						<i class="glyphicon glyphicon-phone-alt"></i>
+						<p class="p3">+1 515 151515</p>
+						<p class="p4">+00 1010101010</p>
+					</div>
+					<div class="email-info">
+						<i class="glyphicon glyphicon-envelope"></i>
+						<p class="p3"><a href="mailto:email1@example.com">email1@example.com</a></p>
+						<p class="p4"><a href="mailto:email2@example.com">email2@example.com</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 footer-center">
+				<h4>Newsletter</h4>
+				<p>Register to our newsletter and be updated with the latests information regarding our services, offers and much more.</p>
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<label for="inputEmail1" class="col-lg-4 control-label"></label>
+						<div class="col-lg-10">
+							<input type="email" class="form-control" id="inputEmail1" placeholder="Email" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="text1" class="col-lg-4 control-label"></label>
+						<div class="col-lg-10">
+							<input type="text" class="form-control" id="text1" placeholder="Your Name" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-10">
+							<button type="submit" class="btn-outline">Sign in</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-4 footer-right">
+				<h4>Support Us</h4>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+					  when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+				<ul class="social-icons2">
+					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /Footer Section -->
+
+
+<!-- Back To Top -->
+<a href="#0" class="cd-top">Top</a>
+<!-- /Back To Top -->
+
+
+
+<!-- js files -->
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/js/SmoothScroll.min.js"></script>
+<script src="assets/js/darkbox.js"></script>
+<script src="assets/js/main.js"></script>
+<!-- js for nav-smooth scroll -->
+<script>
+	$(document).ready(function(){
+		$(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+		var hash = this.hash;
+		$('html, body').animate({
+			scrollTop: $(hash).offset().top
+		}, 900, function(){
+			window.location.hash = hash;
+			});
+		});
+	})
+</script>
+<!-- /js for nav-smooth scroll -->
+
+<!-- js for slide animations -->
+<script>
+	$(window).scroll(function() {
+		$(".slideanim").each(function(){
+			var pos = $(this).offset().top;
+
+			var winTop = $(window).scrollTop();
+			if (pos < winTop + 600) {
+			$(this).addClass("slide");
+			}
+		});
+	});
+</script>
+
+<script src="assets/js/agency.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.zoomslider.min.js"></script>
+<!-- angular -->
+<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="index.module.js"></script>
+<script type="text/javascript" src="index.controller.js"></script>
+</body>
+</html>

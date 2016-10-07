@@ -8,8 +8,7 @@
 .zs-enabled .zs-slideshow .zs-bullets .zs-bullet{display:inline-block;cursor:pointer;border:0px solid #073855;width:14px;height:14px;border-radius:8px;margin:10px;background-color:#073855}
 .zs-enabled .zs-slideshow .zs-bullets .zs-bullet.active{background-color:#1396e2}
 .zs-enabled .zs-slideshow:after{content:" ";position:absolute;top:0;left:0;width:100%;height:100%;z-index:3;background:transparent none repeat 0 0}
-.zs-enabled.overlay-plain .zs-slideshow:after{background-image:url(plain.png)}
-.zs-enabled.overlay-dots .zs-slideshow:after{background:url(../images/dots.png)}
+
 	.properties-table {
 			width: 100%;
 			padding: 0;
