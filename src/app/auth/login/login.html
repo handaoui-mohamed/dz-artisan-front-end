@@ -1,275 +1,70 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Dz artisan</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Outing Travel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Catchy Carz Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- Custom Theme files -->
-<link href="css/stylelogin.css" rel="stylesheet" type="text/css" media="all" />
-<!-- css files -->
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<div  class="carouselogin " data-zs-src='["assets/images/contact.jpg"]'></div>
 
-
-
-
-<script src="js/jquery21-1.11.1.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="css/zoomslider.css" />
-<link href="css/animate-custom.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/stylelogin.css" rel="stylesheet" type="text/css" media="all" />
- 
-<!-- /font files -->
-<!-- js files -->
-<script src="js/modernizr.custom.js"></script>
-
-
-<script type="text/javascript" src="js/modernizr-2.6.2.min.js"></script>
-<!-- /js files -->
-
-
-<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){
-				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-			});
-		});
-</script>
-
-</head>
-
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-<div class="navbar-wrapper">
-    <div class="container">
-		<nav id="mainNav" class="navbar navbar-inverse navbar-static-top cl-effect-20 navbar-custom navbar-fixed-top  " >
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				
-				</div>
-				<div id="navbar" class="navbar-collapse collapse navbar-right">
-					<ul class="nav navbar-nav">
-						<li><a href="index.html"><span data-hover="Accueil">Accueil</span></a></li>
-						<li><a href="#events"><span data-hover="Services">Services</span></a></li>
-						<li><a href="#gallery"><span data-hover="A propos">A propos</span></a></li>
-						<li><a href="#testimonials"><span data-hover="Contactez-nous">Contactez-nous</span></a></li>
-						<li><a href="#"><span data-hover="Se connecter">Se connecter</span></a></li>
-					</ul>
-				</div>
-			</div>
-        </nav>
-    </div>
-</div>
-<!-- Banner Section -->
-<!-- Carousel
-    ================================================== -->
-<!--/banner-section-->
-	<div  class="carouselogin " data-zs-src='["images/contact.jpg"]' data-zs-overlay="dots">
-	
-
-</div>
-<!-- About Section -->
 <section class="about-us" id="about">
-	<h3 class="text-center slideanim">
-Se connecter</h3>
-    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
-    <a class="hiddenanchor" id="toregister"></a>
-    <a class="hiddenanchor" id="tologin"></a>
+	<h3 class="text-center slideanim">Se connecter</h3>
+	<a class="hiddenanchor" id="toregister"></a>
+	<a class="hiddenanchor" id="tologin"></a>
 
-    <div id="wrapper">
-            <div id="login" class="animate form">
-            
-
+	<div id="wrapper">
+		<div id="login" class="animate form">          
 			<form  action="#" method="post" autocomplete="on"> 
-                <h2>Log in</h2> 
-                <p> 
+				<h2>Log in</h2> 
+				<p> 
 					<label for="username" class="uname" data-icon="u" ><span>Your email or name</span></label>
-                    <input id="username" name="username" required="required" type="text" placeholder="EMAIL OR USERNAME"/>
-                </p>
-                <p> 
-                    <label for="password" class="youpasswd" data-icon="p"><span>Your password</span></label>
-                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
-                </p>
-                <p class="keeplogin"> 
+					<input id="username" name="username" required="required" type="text" 
+						placeholder="EMAIL OR USERNAME"/>
+				</p>
+				<p> 
+					<label for="password" class="youpasswd" data-icon="p"><span>Your password</span></label>
+					<input id="password" name="password" required="required" type="password" 
+						placeholder="eg. X8df!90EO" /> 
+				</p>
+				<p class="keeplogin"> 
 					<input type="checkbox" id="brand" value="">
 					<label for="brand"><span></span> Remember me?</label>
 				</p>
-                <p class="login button"> 
-                    <input type="submit" value="Login" /> 
+				<p class="login button"> 
+					<input type="submit" value="Login" /> 
 				</p>
-                <p class="change_link">
+				<p class="change_link">
 					<span>Not a member yet ?</span>
 					<a href="#toregister" class="to_register">Register</a>
 				</p>
-            </form>
-        </div>
+			</form>
+		</div>
 		<div id="register" class="animate form">
-            <form  action="#" method="post" autocomplete="on"> 
-                <h2> Sign up </h2> 
-                <p> 
+			<form  action="#" method="post" autocomplete="on"> 
+				<h2> Sign up </h2> 
+				<p> 
 					<label for="usernamesignup" class="uname" data-icon="u"><span>Your name</span></label>
-                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="USERNAME" />
-                </p>
-                <p> 
-                    <label for="emailsignup" class="youmail" data-icon="e" ><span>Your email</span></label>
-                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="EXAMPLE@MAIL.COM"/> 
-                </p>
-                <p> 
-                    <label for="passwordsignup" class="youpasswd" data-icon="p"><span>Your password</span></label>
-                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+					<input id="usernamesignup" name="usernamesignup" required="required"
+								type="text" placeholder="USERNAME" />
 				</p>
 				<p> 
-                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p"><span>Please confirm your password</span></label>
-                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
-                </p>
-                <p class="signin button"> 
+					<label for="emailsignup" class="youmail" data-icon="e" ><span>Your email</span></label>
+					<input id="emailsignup" name="emailsignup" required="required" 
+							type="email" placeholder="EXAMPLE@MAIL.COM"/> 
+				</p>
+				<p> 
+					<label for="passwordsignup" class="youpasswd" data-icon="p"><span>Your password</span></label>
+					<input id="passwordsignup" name="passwordsignup" required="required" 
+							type="password" placeholder="eg. X8df!90EO"/>
+				</p>
+				<p> 
+					<label for="passwordsignup_confirm" class="youpasswd" data-icon="p">
+						<span>Please confirm your password</span>
+					</label>
+					<input id="passwordsignup_confirm" name="passwordsignup_confirm"
+								required="required" type="password" placeholder="eg. X8df!90EO"/>
+				</p>
+				<p class="signin button"> 
 					<input type="submit" value="Sign up"/> 
 				</p>
-                <p class="change_link">  
+				<p class="change_link">  
 					<span>Already a member ?</span>
 					<a href="#tologin" class="to_register">Log In</a>
 				</p>
-            </form>
-        </div>
+			</form>
+		</div>
 	</div>
 </section>
-<!-- /About Section -->
-
-
-
-
-<!-- Footer Section -->
-<section class="footer">
-	<h2 class="text-center">THANKS FOR VISITING US</h2>
-	<hr>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4 footer-left">
-				<h4>Contact Information</h4>
-				<div class="contact-info">
-					<div class="address">
-						<i class="glyphicon glyphicon-globe"></i>
-						<p class="p3">77 Jack Street</p>
-						<p class="p4">Chicago, USA</p>
-					</div>
-					<div class="phone">
-						<i class="glyphicon glyphicon-phone-alt"></i>
-						<p class="p3">+1 515 151515</p>
-						<p class="p4">+00 1010101010</p>
-					</div>
-					<div class="email-info">
-						<i class="glyphicon glyphicon-envelope"></i>
-						<p class="p3"><a href="mailto:email1@example.com">email1@example.com</a></p>
-						<p class="p4"><a href="mailto:email2@example.com">email2@example.com</a></p>
-					</div>
-				</div>
-			</div><!-- col -->
-			<div class="col-md-4 footer-center">
-				<h4>Newsletter</h4>
-				<p>Register to our newsletter and be updated with the latests information regarding our services, offers and much more.</p>
-				<form class="form-horizontal" role="form">
-					<div class="form-group">
-						<label for="inputEmail1" class="col-lg-4 control-label"></label>
-						<div class="col-lg-10">
-							<input type="email" class="form-control" id="inputEmail1" placeholder="Email" required>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="text1" class="col-lg-4 control-label"></label>
-						<div class="col-lg-10">
-							<input type="text" class="form-control" id="text1" placeholder="Your Name" required>
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-lg-10">
-							<button type="submit" class="btn-outline">Sign in</button>
-						</div>
-					</div>
-				</form><!-- form -->
-			</div><!-- col -->
-			<div class="col-md-4 footer-right">
-				<h4>Support Us</h4>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				<ul class="social-icons2">
-					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-				</ul>
-			</div><!-- col -->
-		</div><!-- row -->
-	</div><!-- container -->
-</section>
-<!-- /Footer Section -->
-<!-- Back To Top -->
-<a href="#0" class="cd-top">Top</a>
-<!-- /Back To Top -->
-
-<!-- js files -->
-
-<script src="js/bootstrap.min.js"></script>
-<script src="js/SmoothScroll.min.js"></script>
-<!-- js for gallery -->
-<script src="js/darkbox.js"></script>
-<!-- /js for gallery -->
-<!-- js for back to top -->
-<script src="js/main.js"></script>
-<!-- /js for back to top -->
-<!-- js for nav-smooth scroll -->
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-
-  // Store hash
-  var hash = this.hash;
-
-  // Using jQuery's animate() method to add smooth page scroll
-  // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-  $('html, body').animate({
-    scrollTop: $(hash).offset().top
-  }, 900, function(){
-
-    // Add hash (#) to URL when done scrolling (default click behavior)
-    window.location.hash = hash;
-    });
-  });
-})
-</script>
-<!-- /js for nav-smooth scroll -->
-<!-- js for slide animations -->
-<script>
-$(window).scroll(function() {
-  $(".slideanim").each(function(){
-    var pos = $(this).offset().top;
-
-    var winTop = $(window).scrollTop();
-    if (pos < winTop + 600) {
-      $(this).addClass("slide");
-    }
-  });
-});
-</script>
-<!-- /js for slide animations -->
-<!-- /js files -->
-    <script src="js/agency.min.js"></script>
-
-
-
-<script type="text/javascript" src="js/jquery.zoomslider.min.js"></script>
-</body>
-</html>
