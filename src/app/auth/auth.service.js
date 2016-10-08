@@ -2,11 +2,11 @@
     'use strict';
 
     angular
-        .module('app.login')
+        .module('app.auth')
         .factory('LoginService');
 
     function LoginService($resource, API_ENDPOINT) {
-        return $resource(API_ENDPOINT + 'login/');
+        return $resource(API_ENDPOINT + 'login');
     }
 
 })();

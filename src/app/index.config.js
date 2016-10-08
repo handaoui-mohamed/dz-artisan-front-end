@@ -9,14 +9,8 @@
         $locationProvider.html5Mode(true).hashPrefix('!');
         $stateProvider.state('home', {
             url: '/',
-            controller: 'MainController as homeVm',
+            controller: 'MainController as vm',
             templateUrl: 'app/main/main.html'
-        });
-
-        $stateProvider.state('login', {
-            url: '/login',
-            controller: 'LoginController as loginVm',
-            templateUrl: 'app/auth/login/login.html'
         });
         $urlRouterProvider.otherwise('/');
     }

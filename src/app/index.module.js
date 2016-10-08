@@ -12,6 +12,9 @@
             'ngMessages', 
             'ngAria', 
             'ui.bootstrap',
-            'toastr'
+            'toastr',
+
+            /* app module*/
+            'app.auth'
         ]);
 })();
