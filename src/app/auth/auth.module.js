@@ -2,10 +2,15 @@
     'use strict';
 
     angular
-        .module('app.auth',[])
+        .module('app.auth',['satellizer'])
         .config(config);
 
-    function config($stateProvider) {
+    function config($stateProvider, $authProvider) {
+        $authProvider.loginUrl = 'http://localhost:5000/api/login';
+        $authProvider.tokenPrefix = '';
+        $authProvider.authHeader = 'Authorization';
+        $authProvider.authToken = '';
+
         $stateProvider.state('auth', {
             url: '/auth',
             controller: 'AuthController as vm',

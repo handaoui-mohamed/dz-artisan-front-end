@@ -15,19 +15,19 @@
 				<p> 
 					<label for="username" class="uname" data-icon="u" ><span>Your email or name</span></label>
 					<input id="username" required="required" type="text" 
-						placeholder="EMAIL OR USERNAME" ng-model="vm.username"/>
+						placeholder="EMAIL OR USERNAME" ng-model="vm.user.username"/>
 				</p>
 				<p> 
 					<label for="password" class="youpasswd" data-icon="p"><span>Your password</span></label>
 					<input id="password" required="required" type="password" 
-						placeholder="eg. X8df!90EO" ng-model="vm.password"/> 
+						placeholder="eg. X8df!90EO" ng-model="vm.user.password"/> 
 				</p>
 				<p class="keeplogin"> 
-					<input type="checkbox" id="brand" value="" ng-model="vm.remember_me">
+					<input type="checkbox" id="brand" value="" ng-model="vm.user.remember_me">
 					<label for="brand"><span></span> Remember me?</label>
 				</p>
 				<p class="login button"> 
-					<input type="submit" value="Login" ng-click="vm.login()"/> 
+					<input type="submit" value="Login" ng-click="vm.login()" ng-disabled="vm.disableSubmit"/> 
 				</p>
 				<p class="change_link">
 					<span>Not a member yet ?</span>
@@ -36,22 +36,22 @@
 			</form>
 		</div>
 		<div id="register" class="animate form">
-			<form  action="#" method="post" autocomplete="on"> 
+			<form autocomplete="on"> 
 				<h2> Sign up </h2> 
 				<p> 
 					<label for="usernamesignup" class="uname" data-icon="u"><span>Your name</span></label>
-					<input id="usernamesignup" name="usernamesignup" required="required"
-								type="text" placeholder="USERNAME" />
+					<input id="usernamesignup" required="required"
+								type="text" placeholder="USERNAME" ng-model="vm.user.username"/>
 				</p>
 				<p> 
 					<label for="emailsignup" class="youmail" data-icon="e" ><span>Your email</span></label>
-					<input id="emailsignup" name="emailsignup" required="required" 
-							type="email" placeholder="EXAMPLE@MAIL.COM"/> 
+					<input id="emailsignup" required="required" 
+							type="email" placeholder="EXAMPLE@MAIL.COM" ng-model="vm.user.email"/> 
 				</p>
 				<p> 
 					<label for="passwordsignup" class="youpasswd" data-icon="p"><span>Your password</span></label>
-					<input id="passwordsignup" name="passwordsignup" required="required" 
-							type="password" placeholder="eg. X8df!90EO"/>
+					<input id="passwordsignup" required="required" 
+							type="password" placeholder="eg. X8df!90EO" ng-model="vm.user.password"/>
 				</p>
 				<p> 
 					<label for="passwordsignup_confirm" class="youpasswd" data-icon="p">
@@ -61,7 +61,7 @@
 								required="required" type="password" placeholder="eg. X8df!90EO"/>
 				</p>
 				<p class="signin button"> 
-					<input type="submit" value="Sign up"/> 
+					<input type="submit" value="Sign up" ng-click='vm.register()' ng-disabled="vm.disableSubmit"/> 
 				</p>
 				<p class="change_link">  
 					<span>Already a member ?</span>
@@ -73,4 +73,5 @@
 </section>
 
 
+<script src="assets/js/darkbox.js"></script>
 <script type="text/javascript" src="assets/js/jquery.zoomslider.min.js"></script>

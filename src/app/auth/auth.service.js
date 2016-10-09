@@ -3,10 +3,10 @@
 
     angular
         .module('app.auth')
-        .factory('LoginService');
+        .factory('RegisterService', RegisterService);
 
-    function LoginService($resource, API_ENDPOINT) {
-        return $resource(API_ENDPOINT + 'login');
+    function RegisterService($resource, API_ENDPOINT) {
+        return $resource(API_ENDPOINT + 'user');
     }
 
 })();
