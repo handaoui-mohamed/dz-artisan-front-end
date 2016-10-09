@@ -27,10 +27,10 @@
         function login(){
             vm.disableSubmit = true;
             $auth.login(vm.user).then(function (response) {
+                console.log(response);
                 if (!response.data.errors) {
-                    $window.localStorage['current_user'] = response.data.user_id;
+                    $window.localStorage['current_user'] = response.data.user.id;
                     // $location.path('/');
-                    $auth.setToken(response.data.token);
                 }
                 vm.disableSubmit = false;
             }, function (errors) {
