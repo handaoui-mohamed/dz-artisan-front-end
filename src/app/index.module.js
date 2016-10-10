@@ -15,6 +15,7 @@
             'toastr',
 
             /* app module*/
-            'app.auth'
+            'app.auth',
+            'app.profile'
         ]);
 })();

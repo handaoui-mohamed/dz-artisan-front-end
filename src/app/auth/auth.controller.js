@@ -5,7 +5,7 @@
         .module('app.auth')
         .controller('AuthController', AuthController);
 
-    function AuthController($auth, $window, $location, RegisterService) {
+    function AuthController($log, $auth, $window, $location, $rootScope, RegisterService) {
         var vm = this;
         vm.user = {
             username: 'handaoui_mohamed',
@@ -18,23 +18,24 @@
 
         function register(){
             RegisterService.save(vm.user,function(data){
-                console.log(data.element);
+                vm.login()
             }, function(error){
-                console.log(error)
+                $log.log(error)
             });
         }
 
         function login(){
             vm.disableSubmit = true;
             $auth.login(vm.user).then(function (response) {
-                console.log(response);
+                $log.log(response);
                 if (!response.data.errors) {
                     $window.localStorage['current_user'] = response.data.user.id;
-                    // $location.path('/');
+                    $rootScope.current_user = response.data.user;
+                    $location.path('/');
                 }
                 vm.disableSubmit = false;
             }, function (errors) {
-                console.log(errors);
+                $log.log(errors);
                 vm.disableSubmit = false;
             });
         }

@@ -4,7 +4,7 @@
         .module('app')
         .controller('MainController', MainController);
 
-    function MainController() {
-        console.log("home controller")
+    function MainController($log) {
+        $log.info("home controller")
     }
 })();
