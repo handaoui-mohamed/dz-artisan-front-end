@@ -1,0 +1,12 @@
+<form novalidate style='margin-top: 200px'>
+    <li ng-repeat="(key, value) in vm.profile">
+        <div ng-if="key === 'position'">
+            <span>latidtude: {{ key.latitude || 'None' }}</span><input type='text'>
+            <br>
+            <span>longitude: {{ key.longitude || 'None' }}</span><input type='text'>
+        </div>
+        <div ng-if="key !== 'position' && key !== 'username' && key !== 'id' && key !== 'job' && key !== 'files'">{{ key+' : '+value}}<input type='text'></div>
+    </li>
+    <input type="button" value='Update' ng-click="vm.updateProfile()">
+    
+</form>

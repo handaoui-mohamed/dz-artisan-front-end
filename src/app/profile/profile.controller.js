@@ -13,5 +13,16 @@
         }, function(errors){    
             $log.error(errors)
         })
+
+        vm.updateProfile = updateProfile;
+
+        function updateProfile(){
+            ProfileService.update(vm.profile,function(data){
+                vm.profile = data.element;
+                $log.info(vm.profile);
+            }, function(error){
+                $log.error(error);
+            })
+        }
     }
 })();
