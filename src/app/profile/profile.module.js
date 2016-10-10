@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.profile', [])
+        .module('app.profile', ['ngFileUpload'])
         .config(config);
 
     function config($stateProvider){

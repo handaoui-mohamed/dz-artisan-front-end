@@ -1,12 +1,88 @@
-<form novalidate style='margin-top: 200px'>
-    <li ng-repeat="(key, value) in vm.profile">
-        <div ng-if="key === 'position'">
-            <span>latidtude: {{ key.latitude || 'None' }}</span><input type='text'>
-            <br>
-            <span>longitude: {{ key.longitude || 'None' }}</span><input type='text'>
+<link href="app/profile/profile.css" rel="stylesheet" type="text/css" media="all" />
+
+<div  class="carouselogin " data-zs-src='["assets/images/test1.jpg"]'></div>
+
+<div class="container">
+	<br>
+	<br>
+	<div class="row">
+        <div class="col-md-4 well" id="leftPanel">
+            <div class="row">
+                <div class="col-md-12">
+                	<div> 
+						<img class="img-thumbnail profile-img" ngf-thumbnail="vm.profile_image.path || vm.default_profile_image">
+        				<h2>{{ ::vm.profile.full_name || vm.profile.username }}</h2>
+                        <br>
+                        <button type="button" class="btn btn-warning" ngf-select="vm.uploadProfilePicture($file)">
+                            <span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Changer la photo de profil
+                        </button>
+						<div ng-if="vm.progressPercentage !== 0 && vm.progressPercentage !== 100">
+							<br>
+							<div class="progress">
+								<div class="progress-bar progress-bar-warning progress-bar-striped active" 
+										role="progressbar" aria-valuenow="{{ vm.progressPercentage }}" aria-valuemin="0" 
+										aria-valuemax="100" ng-style="{width : ( vm.progressPercentage + '%' ) }">
+									<span class="sr-only">60% Complete (warning)</span>
+								</div>
+							</div>
+						</div>
+        			</div>
+        		</div>
+            </div>
         </div>
-        <div ng-if="key !== 'position' && key !== 'username' && key !== 'id' && key !== 'job' && key !== 'files'">{{ key+' : '+value}}<input type='text'></div>
-    </li>
-    <input type="button" value='Update' ng-click="vm.updateProfile()">
-    
-</form>
+        <div class="col-md-8 well profile" id="rightPanel">
+            <div class="row">
+    			<div class="col-md-12">
+					<form role="form">
+						<h2>Modifier votre profil</h2>
+						<hr class="colorgraph">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-6">
+								<div class="form-group">
+									<input type="text" ng-model='vm.profile.full_name' class="form-control input-lg" placeholder="Nom et Prénom">
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-6">
+								
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-6">
+								<div class="form-group">
+									<input type="text" ng-model='vm.profile.phone_number' class="form-control input-lg" placeholder="Numéro Téléphone">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control input-lg" ng-model='vm.profile.email' placeholder="Email">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control input-lg" ng-model='vm.profile.address' placeholder="Adresse">
+						</div>
+						<div class="form-group">
+							<textarea class="form-control input-lg" ng-model="vm.profile.description" rows='5' style="width: 100%"></textarea> 
+						</div>
+						<hr class="colorgraph">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-6">
+								<div class="form-group">
+									<input type="password" class="form-control input-lg" placeholder="Mot de passe">
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-6">
+								<div class="form-group">
+									<input type="password" class="form-control input-lg" placeholder="Confirmer Mot de passe">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-md-6"></div>
+							<div class="col-xs-12 col-md-6"><a href="#" ng-click='vm.updateProfile()' class="btn btn-success btn-block btn-lg">Sauvgarder</a></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+<br>
+
+<script type="text/javascript" src="assets/js/jquery.zoomslider.min.js"></script>
