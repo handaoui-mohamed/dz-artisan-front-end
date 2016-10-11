@@ -26,37 +26,64 @@
     margin: 10px
 }
 
+.change-password{
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+.change-password>a{
+    text-decoration: none;
+}
 
 .profile input::-webkit-input-placeholder {
-color:#000!important;
+color:#666!important;
 }
  
 .profile input:-moz-placeholder { /* Firefox 18- */
-color:#000!important;  
+color:#666!important;  
 }
  
 .profile input::-moz-placeholder {  /* Firefox 19+ */
-color:#000!important;  
+color:#666!important;  
 }
  
 .profile input:-ms-input-placeholder {  
-color:#000!important;  
+color:#666!important;  
 }
 .profile textarea::-webkit-input-placeholder {
-color:#000!important;
+color:#666!important;
 }
  
 .profile textarea::-moz-placeholder { /* Firefox 18- */
-color:#000!important;  
+color:#666!important;  
 }
  
 .profile textarea::-moz-placeholder {  /* Firefox 19+ */
-color:#000!important;  
+color:#666!important;  
 }
  
 .profile textarea::-ms-input-placeholder {  
-color:#000!important;  
+color:#666!important;  
 }
 .profile textarea.form-control {
 	height:150px!important;
+}
+
+.form-control{
+    color: #222 !important;
+}
+
+.pre{
+    white-space: pre;
+}
+
+.profile-error{
+    padding: 5px;
+    text-align: center;
+}
+
+.profile-description{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
 }

@@ -6,7 +6,7 @@
         .factory('RegisterService', RegisterService);
 
     function RegisterService($resource, API_ENDPOINT) {
-        return $resource(API_ENDPOINT + 'user');
+        return $resource(API_ENDPOINT + 'users');
     }
 
 })();

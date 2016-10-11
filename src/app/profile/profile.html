@@ -22,7 +22,7 @@
 								<div class="progress-bar progress-bar-warning progress-bar-striped active" 
 										role="progressbar" aria-valuenow="{{ vm.progressPercentage }}" aria-valuemin="0" 
 										aria-valuemax="100" ng-style="{width : ( vm.progressPercentage + '%' ) }">
-									<span class="sr-only">60% Complete (warning)</span>
+									<span class="sr-only">{{ vm.progressPercentage }}% Complete (warning)</span>
 								</div>
 							</div>
 						</div>
@@ -33,49 +33,89 @@
         <div class="col-md-8 well profile" id="rightPanel">
             <div class="row">
     			<div class="col-md-12">
-					<form role="form">
+					<form name="profileForm">
 						<h2>Modifier votre profil</h2>
 						<hr class="colorgraph">
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 col-md-6">
+								<div class="profile-form-label" ng-if="vm.profile.full_name">Nom et Prénom</div>
+								<div class="pre" ng-if="!vm.profile.full_name"> </div>
 								<div class="form-group">
-									<input type="text" ng-model='vm.profile.full_name' class="form-control input-lg" placeholder="Nom et Prénom">
+									<input type="text" name="full_name" ng-model='vm.profile.full_name' 
+											class="form-control input-lg" placeholder="Nom et Prénom">
 								</div>
 							</div>
 							<div class="col-xs-12 col-sm-6 col-md-6">
 								
 							</div>
 							<div class="col-xs-12 col-sm-6 col-md-6">
+								<div class="profile-form-label" ng-if="vm.profile.phone_number">Numéro de Téléphone</div>
+								<div class="pre" ng-if="!vm.profile.phone_number"> </div>
 								<div class="form-group">
-									<input type="text" ng-model='vm.profile.phone_number' class="form-control input-lg" placeholder="Numéro Téléphone">
+									<input type="text" name="phoneNumber" ng-pattern="/^[0-9 -]+$/"
+									ng-model='vm.profile.phone_number' class="form-control input-lg" 
+									placeholder="Numéro Téléphone">
+								</div>
+								<div ng-messages="profileForm.phoneNumber.$error">
+									<p class="alert alert-danger profile-error" role="alert" ng-message="pattern">Cela doit être un numéro valide!</p>
 								</div>
 							</div>
 						</div>
+						<div class="profile-form-label" ng-if="vm.profile.email" >Email</div>
+						<div class="pre" ng-if="!vm.profile.email"> </div>
 						<div class="form-group">
-							<input type="email" class="form-control input-lg" ng-model='vm.profile.email' placeholder="Email">
+							<input type="email" name="email" class="form-control input-lg"
+							 ng-model='vm.profile.email' placeholder="Email" ng-pattern="/^.+@.+\..+$/">
 						</div>
+						
+						<div ng-messages="profileForm.email.$error">
+							<p class="alert alert-danger profile-error" role="alert" ng-message="pattern">Cela doit être un email valide!</p>
+						</div>
+						<div class="profile-form-label" ng-if="vm.profile.address">Addresse</div>
+						<div class="pre" ng-if="!vm.profile.address"> </div>
 						<div class="form-group">
 							<input type="text" class="form-control input-lg" ng-model='vm.profile.address' placeholder="Adresse">
 						</div>
+						<div class="profile-form-label" ng-if="vm.profile.description">Description</div>
+						<div class="pre" ng-if="!vm.profile.description"> </div>
 						<div class="form-group">
-							<textarea class="form-control input-lg" ng-model="vm.profile.description" rows='5' style="width: 100%"></textarea> 
+							<textarea placeholder="Décrivez-vous ici ..." class="form-control input-lg profile-description" ng-model="vm.profile.description" rows='5' ></textarea> 
+						</div>
+						<div class="change-password" >
+							<a href="" ng-click="vm.change_password = !vm.change_password"><span ng-if="vm.change_password"> Ne pas </span> Modifier Votre mot de passe</a>
+						</div>
+						<div class="row" ng-if='vm.change_password'>
+							<div class="col-xs-12 col-sm-6 col-md-6">
+								<div class="profile-form-label" ng-if="vm.profile.password">Mot de passe</div>
+								<div class="pre" ng-if="!vm.profile.password"> </div>
+								<div class="form-group">
+									<input type="password" name="password" ng-model="vm.profile.password"
+									 class="form-control input-lg" placeholder="Mot de passe" ng-minlength="8">
+								</div>
+								
+								<div ng-messages="profileForm.password.$error">
+									<p class="alert alert-danger profile-error" role="alert" ng-message="minlength">Mot de passe doit être supèrieur à 8!</p>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-6">
+								<div class="profile-form-label" ng-if="vm.confirm_password">Confirmer Mot de passe</div>
+								<div class="pre" ng-if="!vm.confirm_password"> </div>
+								<div class="form-group">
+									<input type="password" name="confirmPassword" 
+									class="form-control input-lg" ng-model="vm.confirm_password"
+									 placeholder="Confirmer Mot de passe">
+								</div>
+								<div ng-if="vm.confirm_password && vm.confirm_password !== vm.profile.password">
+									<p class="alert alert-danger profile-error" role="alert">les mots de passe ne correspondent pas!</p>
+								</div>
+							</div>
 						</div>
 						<hr class="colorgraph">
 						<div class="row">
-							<div class="col-xs-12 col-sm-6 col-md-6">
-								<div class="form-group">
-									<input type="password" class="form-control input-lg" placeholder="Mot de passe">
-								</div>
-							</div>
-							<div class="col-xs-12 col-sm-6 col-md-6">
-								<div class="form-group">
-									<input type="password" class="form-control input-lg" placeholder="Confirmer Mot de passe">
-								</div>
-							</div>
-						</div>
-						<div class="row">
 							<div class="col-xs-12 col-md-6"></div>
-							<div class="col-xs-12 col-md-6"><a href="#" ng-click='vm.updateProfile()' class="btn btn-success btn-block btn-lg">Sauvgarder</a></div>
+							<div class="col-xs-12 col-md-6"><a href="#" ng-click='vm.updateProfile()' class="btn btn-success btn-block btn-lg"
+							 ng-disabled="(vm.change_password && !vm.confirm_password) || (vm.change_password && (vm.confirm_password && vm.confirm_password !== vm.profile.password))
+									 || profileForm.$invalid || profileForm.$pristine">Sauvgarder</a></div>
 						</div>
 					</form>
 				</div>
