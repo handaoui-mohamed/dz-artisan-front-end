@@ -17,7 +17,7 @@
         vm.register = register;
 
         function register(){
-            RegisterService.save(vm.user,function(data){
+            RegisterService.save(vm.user,function(){
                 vm.login()
             }, function(error){
                 $log.log(error)

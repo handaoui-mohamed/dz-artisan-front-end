@@ -87,3 +87,44 @@ color:#666!important;
     max-width: 100%;
     min-width: 100%;
 }
+
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;   
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;   
+}
+
+.job-name{
+    font-weight: 400
+}
+
+.file-thum{
+    width: 158px;
+    max-height: 250px;
+    margin: 5px;
+    background-color: transparent;
+    border: transparent;
+}
+
+.file-delete{
+    margin-left: 9px;
+    margin-bottom: -10px;
+    width: 150px;
+    border-radius: 0px;
+}

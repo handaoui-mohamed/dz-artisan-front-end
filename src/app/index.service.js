@@ -2,8 +2,9 @@
     'use strict';
 
     angular
-        .module('app.profile')
-        .factory('UserService', UserService);
+        .module('app')
+        .factory('UserService', UserService)
+        .factory('JobService', JobService);
 
     function UserService($resource, API_ENDPOINT){
         return $resource(API_ENDPOINT + 'users/:userId', {userId: '@id'},{
@@ -15,5 +16,17 @@
                 method :'PUT'
             }
         });
+    }
+
+    function JobService($resource, API_ENDPOINT){
+        return $resource(API_ENDPOINT + 'jobs/:jobId', {jobId: '@id'},{
+            'get':{
+                method: 'GET',
+                isArray: false
+            },
+            'update':{
+                method: 'PUT'
+            }
+        })
     }
 })();

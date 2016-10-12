@@ -3,7 +3,8 @@
 
     angular
         .module('app.profile')
-        .factory('ProfileService', ProfileService);
+        .factory('ProfileService', ProfileService)
+        .factory('FileService', FileService);
 
     function ProfileService($resource, API_ENDPOINT){
         return $resource(API_ENDPOINT + 'profile', {},{
@@ -15,5 +16,13 @@
                 method :'PUT'
             }
         });
+    }
+
+    function FileService($resource, API_ENDPOINT){
+        return $resource(API_ENDPOINT + 'uploads/:fileId', {fileId: '@id'}, {
+            'delete':{
+                method: 'DELETE'
+            }
+        })
     }
 })();

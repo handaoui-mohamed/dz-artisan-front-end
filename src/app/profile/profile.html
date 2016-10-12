@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-12">
                 	<div> 
-						<img class="img-thumbnail profile-img" ngf-thumbnail="vm.profile_image.path || vm.default_profile_image">
+						<img class="img-thumbnail profile-img" ngf-thumbnail="vm.file || vm.profile_image.path || vm.default_profile_image">
         				<h2>{{ ::vm.profile.full_name || vm.profile.username }}</h2>
                         <br>
                         <button type="button" class="btn btn-warning" ngf-select="vm.uploadProfilePicture($file)">
@@ -34,7 +34,7 @@
             <div class="row">
     			<div class="col-md-12">
 					<form name="profileForm">
-						<h2>Modifier votre profil</h2>
+						<h2>Modifier votre profil. <small>{{ vm.profile.username }}</small></h2>
 						<hr class="colorgraph">
 						<div class="row">
 							<div class="col-xs-12 col-sm-6 col-md-6">
@@ -81,6 +81,53 @@
 						<div class="form-group">
 							<textarea placeholder="Décrivez-vous ici ..." class="form-control input-lg profile-description" ng-model="vm.profile.description" rows='5' ></textarea> 
 						</div>
+						<span class="profile-form-label">Métier</span>
+						<div class="row">
+							<div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="job in vm.jobs">
+								<div class="[ form-group ]" title="{{ job.description }}" >
+									<input type="checkbox" name="job{{job.id}}" id="job{{job.id}}" ng-model="job.selected" autocomplete="off" />
+									<div class="[ btn-group ]">
+										<label for="job{{job.id}}" class="[ btn btn-primary ]">
+											<span class="[ glyphicon glyphicon-ok ]"></span>
+											<span> </span>
+										</label>
+										<label for="job{{job.id}}" class="[ btn btn-default active ] job-name">
+											{{ job.name | uppercase}}
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-md-12">
+								<div> 
+									<button type="button" class="btn btn-default" ngf-select="vm.uploadJobPictures($file)">
+										<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Choisir les photos de vos Travaux
+									</button>
+									<div ng-if="vm.uploadPercentage !== 0 && vm.uploadPercentage !== 100">
+										<br>
+										<div class="progress">
+											<div class="progress-bar progress-bar-primary progress-bar-striped active" 
+													role="progressbar" aria-valuenow="{{ vm.uploadPercentage }}" aria-valuemin="0" 
+													aria-valuemax="100" ng-style="{width : ( vm.uploadPercentage + '%' ) }">
+												<span class="sr-only">{{ vm.uploadPercentage }}% Complete (warning)</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+								<div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="file in vm.profile.files track by $index">
+									<button type="button" class="btn btn-danger file-delete" ng-click="vm.deleteFile(file.id, $index)">
+										<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer photo
+									</button>
+									<img class="img-thumbnail file-thum" ngf-thumbnail="file.path">
+								</div> 
+							</div>
+						<br>
 						<div class="change-password" >
 							<a href="" ng-click="vm.change_password = !vm.change_password"><span ng-if="vm.change_password"> Ne pas </span> Modifier Votre mot de passe</a>
 						</div>
@@ -124,5 +171,4 @@
     </div>
 </div>
 <br>
-
 <script type="text/javascript" src="assets/js/jquery.zoomslider.min.js"></script>
