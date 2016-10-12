@@ -1,77 +1,102 @@
 <link href="assets/css/animate-custom.css" rel="stylesheet" type="text/css" media="all" />
 <link href="assets/css/stylelogin.css" rel="stylesheet" type="text/css" media="all" />
+<link href="app/auth/auth.css" rel="stylesheet" type="text/css" media="all" />
 
 <div  class="carouselogin " data-zs-src='["assets/images/contact.jpg"]'></div>
 
-<section class="about-us" id="about">
-	<h3 class="text-center slideanim">Se connecter</h3>
+<section ng-class="{'login-form': vm.register, 'register-form': !vm.register}">
 	<a class="hiddenanchor" id="toregister"></a>
 	<a class="hiddenanchor" id="tologin"></a>
 
 	<div id="wrapper">
 		<div id="login" class="animate form">          
-			<form  autocomplete="on"> 
-				<h2>Log in</h2> 
+			<form  autocomplete="on" name="loginForm" novalidate> 
+				<h2>Se connecter</h2> 
 				<p> 
-					<label for="username" class="uname" data-icon="u" ><span>Your email or name</span></label>
-					<input id="username" required="required" type="text" 
-						placeholder="EMAIL OR USERNAME" ng-model="vm.user.username"/>
+					<label for="username" class="uname"><span>Nom d'utilisateur</span></label>
+					<input id="username" required name="username" type="text" ng-model="vm.user.username"/>
+					<div ng-messages="loginForm.username.$error" ng-if="loginForm.username.$touched">
+						<p class="alert" role="alert" ng-message="required">* Ce champ est requis</p>
+					</div>
 				</p>
 				<p> 
-					<label for="password" class="youpasswd" data-icon="p"><span>Your password</span></label>
-					<input id="password" required="required" type="password" 
-						placeholder="eg. X8df!90EO" ng-model="vm.user.password"/> 
+					<label for="password" class="youpasswd"><span>Mot de Passe</span></label>
+					<input id="password" required name="password" ng-minlength="8"
+							type="password" ng-model="vm.user.password"/> 
+					<div class="ng-alert" ng-messages="loginForm.password.$error" ng-if="loginForm.password.$touched">
+						<p class="alert" role="alert" ng-message="required">* Ce champ est requis</p>
+						<p class="alert" role="alert" ng-message="minlength">Mot de passe doit être supèrieur à 8!</p>
+					</div>
 				</p>
-				<p class="keeplogin"> 
-					<input type="checkbox" id="brand" value="" ng-model="vm.user.remember_me">
-					<label for="brand"><span></span> Remember me?</label>
-				</p>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" value="" ng-model="vm.user.remember_me">
+						<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+						Rester connecté ?
+					</label>
+				</div>
 				<p class="login button"> 
-					<input type="submit" value="Login" ng-click="vm.login()" ng-disabled="vm.disableSubmit"/> 
+					<input type="submit" value="Se connecter" ng-click="vm.login()" ng-disabled="loginForm.$invalid || loginForm.$pristine"/> 
 				</p>
 				<p class="change_link">
-					<span>Not a member yet ?</span>
-					<a href="#toregister" class="to_register">Register</a>
+					<span>Pas encore membre ?</span>
+					<a href="#toregister" class="to_register" ng-click="vm.register = !vm.register">S'inscrire</a>
 				</p>
 			</form>
 		</div>
 		<div id="register" class="animate form">
-			<form autocomplete="on"> 
-				<h2> Sign up </h2> 
+			<form autocomplete="on" name="registerForm" novalidate> 
+				<h2> Creer un compte </h2> 
 				<p> 
-					<label for="usernamesignup" class="uname" data-icon="u"><span>Your name</span></label>
-					<input id="usernamesignup" required="required"
-								type="text" placeholder="USERNAME" ng-model="vm.user.username"/>
+					<label for="usernamesignup" class="uname"><span>Nom d'utilisateur</span></label>
+					<input id="usernamesignup" required name="username" type="text" ng-model="vm.user.username"/>
+					<div ng-messages="registerForm.username.$error" class="ng-alert" ng-if="registerForm.username.$touched">
+						<p class="alert" role="alert" ng-message="required">* Ce champ est requis</p>
+					</div>
 				</p>
 				<p> 
-					<label for="emailsignup" class="youmail" data-icon="e" ><span>Your email</span></label>
-					<input id="emailsignup" required="required" 
-							type="email" placeholder="EXAMPLE@MAIL.COM" ng-model="vm.user.email"/> 
+					<label for="emailsignup" class="youmail"><span>Email</span></label>
+					<input id="emailsignup" required type="email" name="email" 
+							ng-pattern="/^.+@.+\..+$/" ng-model="vm.user.email"/> 
+					<div ng-messages="registerForm.email.$error" class="ng-alert" ng-if="registerForm.email.$touched">
+						<p class="alert" role="alert" ng-message="required">* Ce champ est requis</p>
+						<p class="alert" role="alert" ng-message="pattern">Cela doit être un email valide!</p>
+					</div>
 				</p>
 				<p> 
-					<label for="passwordsignup" class="youpasswd" data-icon="p"><span>Your password</span></label>
-					<input id="passwordsignup" required="required" 
-							type="password" placeholder="eg. X8df!90EO" ng-model="vm.user.password"/>
+					<label for="passwordsignup" class="youpasswd"><span>Mot de Passe</span></label>
+					<input id="passwordsignup" required type="password" ng-minlength="8"
+							name="password" ng-model="vm.user.password" />
+					<div ng-messages="registerForm.password.$error" class="ng-alert" ng-if="registerForm.password.$touched">
+						<p class="alert" role="alert" ng-message="required">* Ce champ est requis</p>
+						<p class="alert" role="alert" ng-message="minlength">Mot de passe doit être supèrieur à 8!</p>
+					</div>
 				</p>
 				<p> 
-					<label for="passwordsignup_confirm" class="youpasswd" data-icon="p">
-						<span>Please confirm your password</span>
+					<label for="passwordsignup_confirm" class="youpasswd">
+						<span>Confirmer Mot de Passe</span>
 					</label>
-					<input id="passwordsignup_confirm" name="passwordsignup_confirm"
-								required="required" type="password" placeholder="eg. X8df!90EO"/>
+					<input id="passwordsignup_confirm" ng-minlength="8" ng-model="vm.confirm_password"
+							required type="password" name="confirmPassword"/>
+					<div ng-messages="registerForm.confirmPassword.$error" class="ng-alert" ng-if="registerForm.confirmPassword.$touched">
+						<p class="alert" role="alert" ng-message="required">* Ce champ est requis</p>
+					</div>
+					<div ng-if="vm.confirm_password && vm.confirm_password !== vm.user.password">
+						<p class="alert" role="alert">les mots de passe ne correspondent pas!</p>
+					</div>
 				</p>
 				<p class="signin button"> 
-					<input type="submit" value="Sign up" ng-click='vm.register()' ng-disabled="vm.disableSubmit"/> 
+					<input type="submit" value="S'inscrire" ng-click='vm.register()' 
+							ng-disabled="!vm.confirm_password || (vm.change_password && (vm.confirm_password && vm.confirm_password !== vm.user.password)
+									 || registerForm.$invalid || registerForm.$pristine"/> 
 				</p>
 				<p class="change_link">  
-					<span>Already a member ?</span>
-					<a href="#tologin" class="to_register">Log In</a>
+					<span>Déja un Membre ?</span>
+					<a href="#tologin" class="to_register" ng-click="vm.register = !vm.register">Se connecter</a>
 				</p>
 			</form>
 		</div>
 	</div>
 </section>
-
-
 <script src="assets/js/darkbox.js"></script>
 <script type="text/javascript" src="assets/js/jquery.zoomslider.min.js"></script>

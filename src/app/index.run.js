@@ -6,13 +6,14 @@
         .run(run);
     
     function run($auth, $log, $rootScope,$state, $location, $window, UserService) {
-        UserService.get({userId: $window.localStorage['current_user']}, function(data){
-            $rootScope.current_user = data.element;
-        }, function(errors){
-            $log.error(errors);
-        });
-
-        
+        var user_id = $window.localStorage['current_user'];
+        if (user_id){
+            UserService.get({userId: user_id}, function(data){
+                $rootScope.current_user = data.element;
+            }, function(errors){
+                $log.error(errors);
+            });
+        }       
 
         $rootScope.$on('$stateChangeStart', function (event, toState) {
             var notAllowedStates = ['/login', '/forget-password'];

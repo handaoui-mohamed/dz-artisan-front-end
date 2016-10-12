@@ -14,7 +14,9 @@
 
         ProfileService.get(function(data){
             vm.profile = data.element;
-            vm.profile_image = vm.profile.profile_image[vm.profile.profile_image.length - 1]; 
+            if (vm.profile.profile_image.length > 1) {
+                vm.profile_image = vm.profile.profile_image[0]; 
+            }
             $log.info(vm.profile);
 
             JobService.get(function(data){
@@ -60,7 +62,9 @@
                 data: {profile_image: file}
             }).then(function (resp) {
                 vm.profile = resp.data.element;
-                vm.profile_image = vm.profile.profile_image[vm.profile.profile_image.length - 1]; 
+                if (vm.profile.profile_image.length > 1) {
+                    vm.profile_image = vm.profile.profile_image[0]; 
+                }
             }, function (resp) {
                 $log.warn('Error status: ' + resp.status);
             }, function (evt) {

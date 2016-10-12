@@ -33,7 +33,7 @@
         <div class="col-md-8 well profile" id="rightPanel">
             <div class="row">
     			<div class="col-md-12">
-					<form name="profileForm">
+					<form name="profileForm" novalidate>
 						<h2>Modifier votre profil. <small>{{ vm.profile.username }}</small></h2>
 						<hr class="colorgraph">
 						<div class="row">
@@ -105,7 +105,7 @@
 									<button type="button" class="btn btn-default" ngf-select="vm.uploadJobPictures($file)">
 										<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Choisir les photos de vos Travaux
 									</button>
-									<div ng-if="vm.uploadPercentage !== 0 && vm.uploadPercentage !== 100">
+									<div ng-if="vm.uploadPercentage !== 0">
 										<br>
 										<div class="progress">
 											<div class="progress-bar progress-bar-primary progress-bar-striped active" 
