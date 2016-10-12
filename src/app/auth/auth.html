@@ -4,7 +4,7 @@
 
 <div  class="carouselogin " data-zs-src='["assets/images/contact.jpg"]'></div>
 
-<section ng-class="{'login-form': vm.register, 'register-form': !vm.register}">
+<section ng-class="{'login-form': !vm.register, 'register-form': vm.register}">
 	<a class="hiddenanchor" id="toregister"></a>
 	<a class="hiddenanchor" id="tologin"></a>
 
@@ -36,7 +36,7 @@
 					</label>
 				</div>
 				<p class="login button"> 
-					<input type="submit" value="Se connecter" ng-click="vm.login()" ng-disabled="loginForm.$invalid || loginForm.$pristine"/> 
+					<input type="submit" value="Se connecter" ng-click="vm.loginUser()" ng-disabled="vm.disableSubmit || loginForm.$invalid || loginForm.$pristine"/> 
 				</p>
 				<p class="change_link">
 					<span>Pas encore membre ?</span>
@@ -86,8 +86,8 @@
 					</div>
 				</p>
 				<p class="signin button"> 
-					<input type="submit" value="S'inscrire" ng-click='vm.register()' 
-							ng-disabled="!vm.confirm_password || (vm.change_password && (vm.confirm_password && vm.confirm_password !== vm.user.password)
+					<input type="submit" value="S'inscrire" ng-click="vm.registerUser()" 
+							ng-disabled="vm.disableSubmit || !vm.confirm_password || (vm.change_password && (vm.confirm_password && vm.confirm_password !== vm.user.password))
 									 || registerForm.$invalid || registerForm.$pristine"/> 
 				</p>
 				<p class="change_link">  

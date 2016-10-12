@@ -14,10 +14,10 @@
 
         ProfileService.get(function(data){
             vm.profile = data.element;
-            if (vm.profile.profile_image.length > 1) {
+            if (vm.profile.profile_image.length > 0) {
                 vm.profile_image = vm.profile.profile_image[0]; 
             }
-            $log.info(vm.profile);
+            $log.info(vm.profile.profile_image.length, vm.profile); 
 
             JobService.get(function(data){
                 vm.jobs = data.elements;
@@ -40,6 +40,7 @@
         vm.deleteFile = deleteFile;
 
         function updateProfile(){
+            vm.disabled = true;
             vm.profile.jobs = [];
             vm.jobs.forEach(function(job){
                 if(job.selected){
@@ -50,8 +51,10 @@
             ProfileService.update(vm.profile,function(data){
                 vm.profile = data.element;
                 $log.info(vm.profile);
+                vm.disabled = false;
             }, function(error){
                 $log.error(error);
+                vm.disabled = false;
             });
         }
 
@@ -62,7 +65,7 @@
                 data: {profile_image: file}
             }).then(function (resp) {
                 vm.profile = resp.data.element;
-                if (vm.profile.profile_image.length > 1) {
+                if (vm.profile.profile_image.length > 0) {
                     vm.profile_image = vm.profile.profile_image[0]; 
                 }
             }, function (resp) {

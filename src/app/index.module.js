@@ -16,6 +16,7 @@
 
             /* app module*/
             'app.auth',
-            'app.profile'
+            'app.profile',
+            'app.search'
         ]);
 })();

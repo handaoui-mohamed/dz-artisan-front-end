@@ -8,18 +8,21 @@
     function AuthController($log, $auth, $window, $state, $rootScope, RegisterService) {
         var vm = this;
 
-        vm.login = login;
-        vm.register = register;
+        vm.register = false;
+        vm.loginUser = loginUser;
+        vm.registerUser = registerUser;
 
-        function register(){
+        function registerUser(){
+            vm.disableSubmit = true;
             RegisterService.save(vm.user,function(){
-                vm.login()
+                vm.loginUser();
             }, function(error){
-                $log.log(error)
+                $log.log(error);
+                vm.disableSubmit = false;
             });
         }
 
-        function login(){
+        function loginUser(){
             vm.disableSubmit = true;
             $auth.login(vm.user).then(function (response) {
                 $log.log(response);
