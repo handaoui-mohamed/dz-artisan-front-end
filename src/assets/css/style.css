@@ -27,18 +27,15 @@ body a{
 	background:#fff;
 }
 .section_roomservice select {
-    padding: 17px 10px;
+    padding: 15px 10px;
     width: 100%;
     font-weight: normal;
-    background: none;
     border: none;
     color: #073855;
     outline: none;
     font-size: 16px;
     margin-bottom: 0;
-    background: url(../images/arrow_down.png) no-repeat 92% center #ffffff;
     background-size: 5% !important;
-    -webkit-appearance: none;
 }
 .headerservices-middle form input[type="submit"]{
     background: url(../images/search.png) no-repeat 4px 0px #e45753;
