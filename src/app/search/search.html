@@ -1,5 +1,4 @@
 <link href="app/search/search.css" rel="stylesheet" type="text/css" media="all"/>
-<script type="text/javascript" src="assets/js/scriptprofil.js"></script>
 
 
 <div  d="demo-1" class="carouselogin " data-zs-src='["assets/images/2.jpg"]' data-zs-overlay="dots"></div>
@@ -9,21 +8,19 @@
     <div class="headerservices-middle">
             <div class="headerservices-search">
             <form>
-                <div class="search" >
-                    <input type="search" value="Search" name="search">
+                <div class="search search-bar" >
+                    <input type="search" class="search-field" placeholder="Search" 
+                            name="search" ng-model="vm.searchInput" ng-click="vm.getUsers()">
                 </div>
                 <div class="section_roomservice">
                     <select class="frm-field required search-job">
-                        <option value="null">All Tests</option>
-                        <option value="null">Blood Test</option>     
-                        <option value="AX">Urine Test </option>
-                        <option value="AX">Blood Volume Test</option>
-                        <option value="AX">Normal Test</option>
-                        <option value="AX">Body Scanning</option>
+                        <option value="null">Touts les Métiers</option>
+                        <option ng-repeat="job in vm.jobs" value="{{ job }}">{{ job.name }}</option>
+
                     </select>
                 </div>
                 <div class="sear-sub">
-                    <input type="submit" value=" ">
+                    <input class="search-button" type="submit" value=" ">
                 </div>
                 <div class="clearfix"></div>
             </form>
@@ -31,40 +28,45 @@
     </div>
     
 	<h3 class="text-center search-title">Artisan a votre disposition</h3>
-	<div ng-repeat="user in vm.users track by $index" class="col-md-4 article-post">		
-        <div class="headerprofil">
-            <div class="textprofil">
-                <img src="assets/images/men1.jpg" alt="" />
-                <h2>{{ user.full_name || user.username }}</h2>
-                <a href="mailto:{{ user.email }}"><p>@{{ user.username }}</p></a>
+    <div ng-repeat="user in vm.users track by $index">
+        <div class="col-xs-12 col-sm-6 col-md-4 article-post">		
+            <div class="headerprofil">
+                <div class="textprofil">
+                    <img src="assets/images/men1.jpg" alt="" />
+                    <!--<img ngf-thumbnail="user.profile_image[0].path || vm.default_profile_image" alt="" />-->
+                    <h2>{{ user.full_name || user.username }}</h2>
+                    <a href="mailto:{{ user.email }}"><p>@{{ user.username }}</p></a>
+                </div>
             </div>
-        </div>
-    
-        <ul class="contentprofil">
-            <li class="menuprofil">
+        
+            <ul class="contentprofil">
+                <li class="menuprofil">
+                        <ul>
+                        <li class="button"><a href="#">Métiers<span class="iconprofil statprofil"> </span></a></li>          	
+                        <li class="dropdown">
+                            <ul class="icon-navigationprofil" ng-repeat="job in user.jobs">
+                                <li><a >{{ job.name }}</a></li>
+                            </ul>
+                        </li>
+                    </ul>      
+                </li>     
+                <li class="menuprofil">
                     <ul>
-                    <li class="button"><a href="#">Métiers<span class="iconprofil statprofil"> </span></a></li>          	
-                    <li class="dropdown">
-                        <ul class="icon-navigationprofil" ng-repeat="job in user.jobs">
-                            <li><a >{{ job.name }}</a></li>
-                        </ul>
-                    </li>
-                </ul>      
-            </li>     
-            <li class="menuprofil">
-                <ul>
-                    <li class="button"><a href="#">Contact<span class="iconprofil"> </span></a></li>
-                    <li class="dropdown">
-                        <ul class="icon-navigationprofil">
-                            <li><a >Téléphone: {{ user.phone_number }}</a></li>
-                            <li><a >Addresse: {{ user.adress }}</a></li>
-                            <li><a href="" ui-sref="/profile/{{ user.username }}">Visité profil</a></li>
-                            
-                        </ul>
-                    </li>
-                </ul>   		  
-            </li>
-        </ul>
+                        <li class="button"><a href="#" >Contact<span class="iconprofil"> </span></a></li>
+                        <li class="dropdown">
+                            <ul class="icon-navigationprofil">
+                                <li><a >Téléphone: {{ user.phone_number }}</a></li>
+                                <li><a >Adresse: {{ user.address }}</a></li>
+                                <li class="visit-profile"><a href="" ui-sref="/profile/{{ user.username }}">Visité profil</a></li>
+                                
+                            </ul>
+                        </li>
+                    </ul>   		  
+                </li>
+            </ul>
+        </div>
+        <div ng-if="$last"><script type="text/javascript" src="assets/js/scriptprofil.js"></script></div>
+    </div>
     </div>
 		 
 							
@@ -72,9 +74,12 @@
     <div class="clearfix"> </div>	
     <div class="blog-pagenat">
         <ul>
-            <li><a class="frist" href="#">Prev</a></li>
-            <li ng-repeat="user in vm.users track by $index"><a href="#">{{ $index + 1}}</a></li>
-            <li><a class="last" href="#">Next</a></li>
+            <li><a href="" ng-click="vm.previousPage()">Précédant</a></li>
+            <li class="search-pages" ng-repeat="page in vm.pages track by $index"
+                ng-if="(vm.current_page > $index && vm.current_page - $index < 6) || (vm.current_page < $index && $index - vm.current_page < 5)">
+                <a ng-class="{'current-page': vm.current_page === $index + 1}" 
+                        href="" ng-click="vm.changePage($index + 1)">{{ $index + 1}}</a></li>
+            <li class="search-next-page"><a class="last" href="" ng-click="vm.nextPage()">Suivant</a></li>
 
         </ul>
     </div>

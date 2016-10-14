@@ -5,7 +5,7 @@
 
 	<div class="demo-inner-content">
 		<div class="banner-info" >
-			 <form action="#" method="post">	
+			 <form>	
 				<div class="container1">
 				<div class="b_room">
 						<div class="booking_room"><br />
@@ -13,7 +13,7 @@
 								<ul>
 									<li class="span1_of_1">
 										<form>
-											<input id="advanced-placepicker" class="form-control " 
+											<input id="advanced-placepicker" class="form-control " ng-model="vm.searchInput"
 												   data-map-container-id="collapseTwo"  type="text"  
 												   value="Votre Ville" onfocus="this.value = '';" 
 												   onblur="if (this.value == '') {this.value = 'Votre Ville';}">
@@ -21,7 +21,7 @@
 									</li>	
 									<li class="span1_of_1">
 										<div class="section_room">
-											<select id="country" onchange="change_country(this.value)" class=" form-control ">
+											<select id="country" class=" form-control " ng-model="vm.selectedJobs">
 													<option value="null">Spécialité</option>
 													<option value="null">popular areas</option>         
 													<option value="AX">Maroubra</option>
@@ -31,8 +31,8 @@
 									</li>				  
 									<li class="span1_of_3">
 										<div class="date_btn">
-											<form action="resturants.html">
-												<input type="submit" value="Trouver l'artisan">
+											<form>
+												<input type="submit" ng-click="vm.search()" value="Trouver l'artisan">
 											</form>
 										</div>
 									</li>

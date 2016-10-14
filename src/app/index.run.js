@@ -16,7 +16,7 @@
         }       
 
         $rootScope.$on('$stateChangeStart', function (event, toState) {
-            var notAllowedStates = ['/login', '/forget-password'];
+            var notAllowedStates = ['/auth', '/forget-password'];
 
             if (notAllowedStates.indexOf($location.url()) === -1)
                 $rootScope.next = $location.url();
@@ -29,7 +29,7 @@
             } else {
                 if (toState['loginRequired']) {
                     event.preventDefault();
-                    $state.go('login');
+                    $state.go('auth');
                 }
             }
         });

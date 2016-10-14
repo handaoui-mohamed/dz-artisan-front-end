@@ -4,6 +4,10 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 /*-- reset code --*/
+.navbar-nav{
+    margin: -10px !important;
+}
+
 body{
 	padding:0;
 	margin:0;
@@ -212,7 +216,7 @@ body {
 }
 
 .cl-effect-20 a span {
-	font-size: 19px;
+	font-size: 17px;
     color: #fff;
 	position: relative;
 	display: inline-block;
