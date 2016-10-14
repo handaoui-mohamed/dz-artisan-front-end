@@ -1,3 +1,5 @@
+<link href="app/main/main.css" rel="stylesheet" type="text/css" media="all" />
+
 <!-- top carousel and search bar-->
 <div id="demo-1" class="carousel slide"
 		data-zs-src='["../assets/images/2.jpg","../assets/images/1.jpg","../assets/images/3.jpg","../assets/images/4.jpg"]'
@@ -7,9 +9,9 @@
 		<div class="banner-info" >
 			 <form>	
 				<div class="container1">
-				<div class="b_room">
-						<div class="booking_room"><br />
-							<div class="reservation">
+				<div class="b_user">
+						<div class="searching_user"><br />
+							<div class="searching">
 								<ul>
 									<li class="span1_of_1">
 										<form>
@@ -21,16 +23,14 @@
 									</li>	
 									<li class="span1_of_1">
 										<div class="section_room">
-											<select id="country" class=" form-control " ng-model="vm.selectedJobs">
-													<option value="null">Spécialité</option>
-													<option value="null">popular areas</option>         
-													<option value="AX">Maroubra</option>
-													<option value="AX">Ultimo</option>
+											<select class=" form-control" ng-model="vm.selectedJobs">
+													<option value="null">Touts les métiers</option>
+													<option ng-repeat="job in vm.jobs" value="{{ job }}">{{ job.name }}</option>
 											</select>
 										</div>	
 									</li>				  
 									<li class="span1_of_3">
-										<div class="date_btn">
+										<div class="search_btn">
 											<form>
 												<input type="submit" ng-click="vm.search()" value="Trouver l'artisan">
 											</form>

@@ -4,9 +4,15 @@
         .module('app')
         .controller('MainController', MainController);
 
-    function MainController($rootScope, $state) {
+    function MainController($rootScope, $state, JobService) {
         var vm = this;
         
+        vm.jobs = [];
+
+        JobService.get(function(data){
+            vm.jobs = data.elements;
+        });
+
         vm.search = search;
 
         function search(){

@@ -12,6 +12,7 @@ body{
 	padding:0;
 	margin:0;
 	background:#FFF;
+	font-size: 16px;
 }
 body a{
     transition:0.5s all;
@@ -20,6 +21,7 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+
 .headerservices-middle input[type="search"] {
     outline: none;
     border: none;
@@ -37,7 +39,7 @@ body a{
     border: none;
     color: #073855;
     outline: none;
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 0;
     background-size: 5% !important;
 }
@@ -325,9 +327,6 @@ body {
 }
 /*-- /Navigation --*/
 /*-- Banner Section --*/
-.carousel {
-
-}
 .carousel-caption {
 	z-index: 10;
 }
@@ -390,7 +389,7 @@ section.our-services h3.text-center{
 	font-family: 'Montserrat', sans-serif;
 }
 section.our-services p.text-center{ 
-	color: #0000;
+	color: #000;
 }
 #features .ac a{
 	font-size: 20px;

@@ -11,21 +11,22 @@
         vm.users = [];
         vm.jobs = [];
         vm.pages = [];
+        vm.selectedJobs = [];
         vm.current_page = 1;
         vm.default_profile_image = "assets/images/avatar.png"
 
-        var search = $rootScope.search;
-        if (search){
-            vm.searchInput = search.input;
-            vm.selectedJobs = search.selectedJobs;
-            getUsers();
-            delete $rootScope.search;
-        }else{
-            getUsers();
-        }
-
         JobService.get(function(data){
             vm.jobs = data.elements;
+
+            var search = $rootScope.search;
+            if (search){
+                vm.searchInput = search.input;
+                vm.selectedJobs = vm.jobs.find(function(job){return job.id === search.jobs.id});
+                getUsers();
+                delete $rootScope.search;
+            }else{
+                getUsers();
+            }
         });
 
         vm.getUsers = getUsers;
@@ -55,7 +56,13 @@
         }
 
         function getUsers(){
-             SearchService.search({page: vm.current_page},{searchInput: vm.searchInput, limit:12},function(data){
+            var searchParams = {
+                jobs: vm.selectedJobs, 
+                searchInput: vm.searchInput, 
+                limit:12
+            }
+
+            SearchService.search({page: vm.current_page}, searchParams, function(data){
                 vm.users = data.elements;
                 vm.pages = [];
                 for (var i = 0; i < data.total_pages; i++) {
