@@ -11,7 +11,7 @@
             'ngTouch',
             'ngMessages', 
             'ngAria', 
-            'ui.bootstrap',
+            'ui.multiselect',
             'toastr',
 
             /* app module*/

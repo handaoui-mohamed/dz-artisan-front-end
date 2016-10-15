@@ -20,8 +20,9 @@
 
             var search = $rootScope.search;
             if (search){
+                $log.info(search);
                 vm.searchInput = search.input;
-                vm.selectedJobs = vm.jobs.find(function(job){return job.id === search.jobs.id});
+                vm.selectedJobs = search.jobs;
                 getUsers();
                 delete $rootScope.search;
             }else{

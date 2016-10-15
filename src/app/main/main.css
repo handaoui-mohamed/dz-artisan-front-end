@@ -1,3 +1,23 @@
+.search-job div.btn-group{
+    width: 100%
+}
+
+.search-job button{
+    width: 100%
+}
+
+.search-job span{
+    top:50% !important;
+}
+
+.search-job input{
+	color: #000
+}
+
+.search-job button div{
+    max-width: 150px !important;
+}
+
 .online_reservation{
 	z-index: 999;
 }
@@ -72,9 +92,6 @@ select option{
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
-}
-.searching ul {
-  padding: 0;
 }
 .search_btn form input[type="submit"] {
   text-transform: capitalize;

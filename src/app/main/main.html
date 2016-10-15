@@ -23,10 +23,18 @@
 									</li>	
 									<li class="span1_of_1">
 										<div class="section_room">
-											<select class=" form-control" ng-model="vm.selectedJobs">
-													<option value="null">Touts les métiers</option>
-													<option ng-repeat="job in vm.jobs" value="{{ job }}">{{ job.name }}</option>
-											</select>
+											<multiselect class="search-job"
+												ng-model="vm.selectedJobs"
+												options="job.name for job in vm.jobs" 
+												data-multiple="true" 
+												data-compare-by="id" 
+												scroll-after-rows="5" 
+												filter-after-rows="5"
+												max-width="100"
+                        						ms-header="Touts les métiers"
+                        						ms-selected="{{ vm.selectedJobs.length}} sélectionné"
+												tabindex="-1">
+											</multiselect>
 										</div>	
 									</li>				  
 									<li class="span1_of_3">

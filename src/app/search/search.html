@@ -10,16 +10,24 @@
             <form>
                 <div class="search search-bar" >
                     <input type="search" class="search-field" placeholder="Search" 
-                            name="search" ng-model="vm.searchInput" ng-click="vm.getUsers()">
+                            name="search" ng-model="vm.searchInput">
                 </div>
                 <div class="section_roomservice">
-                    <select class="frm-field required search-job">
-                        <option value="null">Touts les Métiers</option>
-                        <option ng-repeat="job in vm.jobs" value="{{ job }}">{{ job.name }}</option>
-                    </select>
+                    <multiselect class="search-job"
+                        ng-model="vm.selectedJobs"
+                        options="job.name for job in vm.jobs" 
+                        data-multiple="true" 
+                        data-compare-by="id" 
+                        scroll-after-rows="5" 
+                        filter-after-rows="5"
+                        max-width="100"
+                        ms-header="Touts les métiers"
+                        ms-selected="{{ vm.selectedJobs.length }} sélectionné"
+                        tabindex="-1">
+                    </multiselect>
                 </div>
                 <div class="sear-sub">
-                    <input class="search-button" type="submit" value=" ">
+                    <input class="search-button" type="submit" value=" "  ng-click="vm.getUsers()">
                 </div>
                 <div class="clearfix"></div>
             </form>
@@ -31,7 +39,7 @@
         <div class="col-xs-12 col-sm-6 col-md-4 article-post">		
             <div class="headerprofil">
                 <div class="textprofil">
-                    <div class="profile-img" ng-style="{'background': 'url({{ user.profile_image[0].path || vm.default_profile_image }}) center center'}"></div>
+                    <div ui-sref="/profile/{{ user.username }}" class="profile-img" ng-style="{'background': 'url({{ user.profile_image[0].path || vm.default_profile_image }}) center center'}"></div>
                     <h2>{{ user.full_name || user.username }}</h2>
                     <a href="mailto:{{ user.email }}"><p>@{{ user.username }}</p></a>
                 </div>

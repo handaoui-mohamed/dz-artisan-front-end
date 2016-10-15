@@ -6,7 +6,8 @@
     border-radius: 50%;
     background-size: 150px auto !important;
     background-repeat: no-repeat;
-    margin-left: 33%
+    margin-left: 33%;
+    cursor: pointer;
 }
 
 .search-bar  input::-webkit-input-placeholder {
@@ -26,9 +27,26 @@ color:#666!important;
 }
 
 
-.search-job{
-    border-radius: 0;
-    background: white;
+.search-job div.btn-group{
+    width: 100%
+}
+
+.search-job button{
+    border-radius: 0px;
+    padding: 15px 10px;
+    border: none;
+    color: #073855;
+    outline: none;
+    font-size: 14px;
+    width: 100%
+}
+
+.search-job button div{
+    max-width: 120px !important;
+}
+
+.search-job span{
+    top:50% !important;
 }
 
 .search-pages{
@@ -111,6 +129,7 @@ color:#666!important;
 }
 .blog-pagenat ul li a:hover {
   background:#1396e2;
+  color: #fff
 }
 
 ol,ul{list-style:none;margin:0;padding:0;}
