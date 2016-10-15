@@ -14,11 +14,21 @@
         });
 
         vm.search = search;
+        vm.placeChanged = placeChanged;
+
+        function placeChanged() {
+            var place = this.getPlace().geometry.location;
+            vm.location = {
+                latitude: place.lat(),
+                longitude: place.lng()
+            }
+        }
 
         function search(){
             $rootScope.search = {
                 jobs: vm.selectedJobs,
-                input: vm.searchInput
+                input: vm.searchInput,
+                location: vm.location
             };
             $state.go('search');
         }

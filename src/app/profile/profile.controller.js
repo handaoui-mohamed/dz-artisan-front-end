@@ -38,6 +38,14 @@
         vm.uploadProfilePicture = uploadProfilePicture;
         vm.uploadJobPictures = uploadJobPictures;
         vm.deleteFile = deleteFile;
+        vm.placeChanged = placeChanged;
+
+        function placeChanged() {
+            var place = this.getPlace().geometry.location;
+            vm.profile.latitude = place.lat();
+            vm.profile.longitude = place.lng();
+        }
+
 
         function updateProfile(){
             vm.disabled = true;

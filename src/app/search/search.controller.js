@@ -23,8 +23,9 @@
                 $log.info(search);
                 vm.searchInput = search.input;
                 vm.selectedJobs = search.jobs;
-                getUsers();
+                vm.location = search.location;
                 delete $rootScope.search;
+                getUsers();
             }else{
                 getUsers();
             }
@@ -34,6 +35,7 @@
         vm.nextPage = nextPage;
         vm.previousPage = previousPage;
         vm.changePage = changePage;
+        vm.placeChanged = placeChanged;
 
         function changePage(PageNumber){
             if (PageNumber !== vm.current_page){
@@ -56,19 +58,25 @@
             }
         }
 
+        function placeChanged() {
+            var place = this.getPlace().geometry.location;
+            vm.location = {
+                latitude: place.lat(),
+                longitude: place.lng()
+            }
+        }
+
         function getUsers(){
             var searchParams = {
                 jobs: vm.selectedJobs, 
-                searchInput: vm.searchInput, 
+                location: vm.location, 
                 limit:12
             }
 
+            $log.info(searchParams);
             SearchService.search({page: vm.current_page}, searchParams, function(data){
                 vm.users = data.elements;
-                vm.pages = [];
-                for (var i = 0; i < data.total_pages; i++) {
-                    vm.pages.push(i);   
-                }
+                vm.pages = new Array(data.total_pages);
             });
         }
     }

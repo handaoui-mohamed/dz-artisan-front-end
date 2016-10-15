@@ -15,10 +15,12 @@
 								<ul>
 									<li class="span1_of_1">
 										<form>
-											<input id="advanced-placepicker" class="form-control " ng-model="vm.searchInput"
-												   data-map-container-id="collapseTwo"  type="text"  
-												   value="Votre Ville" onfocus="this.value = '';" 
-												   onblur="if (this.value == '') {this.value = 'Votre Ville';}">
+											<input 	places-auto-complete size=80
+													component-restrictions="{country:'dz'}"
+													types="['geocode']"
+													on-place-changed="vm.placeChanged()"
+													id="advanced-placepicker" class="form-control " ng-model="vm.searchInput"
+												   	type="text"  placeholder="Search">
 										</form>
 									</li>	
 									<li class="span1_of_1">
@@ -31,7 +33,7 @@
 												scroll-after-rows="5" 
 												filter-after-rows="5"
 												max-width="100"
-                        						ms-header="Touts les métiers"
+                        						ms-header="Tous les métiers"
                         						ms-selected="{{ vm.selectedJobs.length}} sélectionné"
 												tabindex="-1">
 											</multiselect>
@@ -39,9 +41,7 @@
 									</li>				  
 									<li class="span1_of_3">
 										<div class="search_btn">
-											<form>
-												<input type="submit" ng-click="vm.search()" value="Trouver l'artisan">
-											</form>
+											<input type="submit" ng-click="vm.search()" value="Trouver l'artisan">
 										</div>
 									</li>
 									<div class="clearfix"></div>

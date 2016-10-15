@@ -93,7 +93,7 @@ select option{
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
-.search_btn form input[type="submit"] {
+.search_btn input[type="submit"] {
   text-transform: capitalize;
   width: 100% !important;
   background: #073855;
@@ -112,7 +112,7 @@ select option{
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
 }
-.search_btn form input[type="submit"]:hover{
+.search_btn input[type="submit"]:hover{
 	background: #1396e2;
 }
 .searching_user {
@@ -171,7 +171,7 @@ select option{
 .searching ul li.span1_of_3 {
   width: 39%;
 }
-.search_btn form input[type="submit"] {
+.search_btn input[type="submit"] {
   font-size: 1em;
 }
 li.im-g {
@@ -242,7 +242,7 @@ select {
 .boo-lef p {
   font-size: 0.8125em;
 }
-.search_btn form input[type="submit"] {
+.search_btn input[type="submit"] {
   font-size: 0.875em;
 }
 .searching ul li.span1_of_3 {

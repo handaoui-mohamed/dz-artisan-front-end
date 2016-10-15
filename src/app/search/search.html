@@ -1,6 +1,5 @@
 <link href="app/search/search.css" rel="stylesheet" type="text/css" media="all"/>
 
-
 <div  d="demo-1" class="carouselogin " data-zs-src='["assets/images/2.jpg"]' data-zs-overlay="dots"></div>
 
 
@@ -9,7 +8,11 @@
             <div class="headerservices-search">
             <form>
                 <div class="search search-bar" >
-                    <input type="search" class="search-field" placeholder="Search" 
+                    <input  places-auto-complete 
+                            component-restrictions="{country:'dz'}"
+                            types="['geocode']"
+                            on-place-changed="vm.placeChanged()"
+                            type="search" class="search-field" placeholder="Search" 
                             name="search" ng-model="vm.searchInput">
                 </div>
                 <div class="section_roomservice">
@@ -21,7 +24,7 @@
                         scroll-after-rows="5" 
                         filter-after-rows="5"
                         max-width="100"
-                        ms-header="Touts les métiers"
+                        ms-header="Tous les métiers"
                         ms-selected="{{ vm.selectedJobs.length }} sélectionné"
                         tabindex="-1">
                     </multiselect>
@@ -91,6 +94,5 @@
         </ul>
     </div>
 </section>
-
 
 <script type="text/javascript" src="assets/js/jquery.zoomslider.min.js"></script>

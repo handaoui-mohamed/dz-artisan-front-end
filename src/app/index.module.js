@@ -13,6 +13,7 @@
             'ngAria', 
             'ui.multiselect',
             'toastr',
+            'ngMap',
 
             /* app module*/
             'app.auth',
