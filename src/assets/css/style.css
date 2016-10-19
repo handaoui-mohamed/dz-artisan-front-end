@@ -61,7 +61,7 @@ body a{
     width: 33%;	
 }
 .sear-sub{
-    float: right;
+    float: left;
     width: 10%;		
 }
 .headerservices-middle {
@@ -121,7 +121,7 @@ body a{
 		width: 52%;
 	}
 	.sear-sub {
-		float: right;
+		float: left;
 		width: 15%;
 	}
 	.team_bottom-grid {

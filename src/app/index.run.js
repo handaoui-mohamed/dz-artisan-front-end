@@ -16,7 +16,7 @@
         }       
 
         $rootScope.$on('$stateChangeStart', function (event, toState) {
-            var notAllowedStates = ['/auth', '/forget-password'];
+            var notAllowedStates = ['/auth', '/reset'];
 
             if (notAllowedStates.indexOf($location.url()) === -1)
                 $rootScope.next = $location.url();
