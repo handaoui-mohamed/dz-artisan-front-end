@@ -18,6 +18,7 @@
             /* app module*/
             'app.auth',
             'app.profile',
-            'app.search'
+            'app.search',
+            'app.user_info'
         ]);
 })();

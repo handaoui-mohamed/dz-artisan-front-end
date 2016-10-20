@@ -5,9 +5,8 @@
         .module('app.search')
         .controller('SearchController', SearchController);
 
-    function SearchController($scope, $log, $rootScope, SearchService, UserService, JobService){
+    function SearchController($scope, $log, $rootScope, SearchService, UserService, JobService, toastr){
         var vm = this;
-
         vm.users = [];
         vm.jobs = [];
         vm.pages = [];
@@ -21,7 +20,6 @@
 
             var search = $rootScope.search;
             if (search){
-                $log.info(search);
                 vm.searchInput = search.input;
                 vm.selectedJobs = search.jobs;
                 vm.location = search.location;
@@ -71,17 +69,17 @@
             var searchParams = {
                 jobs: vm.selectedJobs, 
                 location: vm.location, 
-                limit:12
+                limit:6
             }
 
-            $log.info(searchParams);
             SearchService.search({page: vm.current_page}, searchParams, function(data){
                 vm.users = data.elements;
+                console.table(vm.users); 
                 vm.pages = new Array(data.total_pages);
                 updateOnScreenChange();
             });
         }
-
+ 
         /*Jquery function for screen size*/
         function updateOnScreenChange(){
             changeElementAlignement();
