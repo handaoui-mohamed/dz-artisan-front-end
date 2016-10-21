@@ -18,7 +18,7 @@
             RegisterService.save(vm.user,function(){
                 vm.loginUser();
                 toastr.success('Connexion en cours ...', 'Création de compte avec succee:');
-            }, function(error){
+            }, function(){
                 toastr.error('Le nom d\'utilisateur exite déja', 'Error lors de la Création de votre compte:');
                 vm.disableSubmit = false;
             });
@@ -38,7 +38,7 @@
                      toastr.error('Le nom d\'utilisateur ou mot de passe incorrect!', 'Error de connexion:');
                 }
                 vm.disableSubmit = false;
-            }, function (errors) {
+            }, function () {
                 toastr.error('Le nom d\'utilisateur ou mot de passe incorrect!', 'Error de connexion:');
                 vm.disableSubmit = false;
             });

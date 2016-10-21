@@ -89,18 +89,13 @@
 						</div>
 						<span class="profile-form-label">Métier</span>
 						<div class="row">
-							<div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="job in vm.jobs">
-								<div class="[ form-group ]" title="{{ job.description }}" >
-									<input type="checkbox" name="job{{job.id}}" id="job{{job.id}}" ng-model="job.selected" autocomplete="off" />
-									<div class="[ btn-group ]">
-										<label for="job{{job.id}}" class="[ btn btn-primary ]">
-											<span class="[ glyphicon glyphicon-ok ]"></span>
-											<span> </span>
-										</label>
-										<label for="job{{job.id}}" class="[ btn btn-default active ] job-name">
-											{{ job.name | uppercase}}
-										</label>
-									</div>
+							<div class="col-xs-6 col-sm-6 col-md-4" ng-repeat="job in vm.jobs">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="job{{job.id}}" id="job{{job.id}}" ng-model="job.selected" value="">
+										<span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+										{{ job.name | uppercase}}
+									</label>
 								</div>
 							</div>
 						</div>

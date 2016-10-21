@@ -5,7 +5,7 @@
         .module('app.profile')
         .controller('ProfileController', ProfileController);
 
-    function ProfileController($log, ProfileService, JobService, Upload, API_ENDPOINT, FileService){
+    function ProfileController($log, ProfileService, JobService, Upload, API_ENDPOINT, FileService, ErrorToast, toastr){
         var vm = this;
         vm.jobs = [];
         vm.progressPercentage = 0;
@@ -17,7 +17,6 @@
             if (vm.profile.profile_image.length > 0) {
                 vm.profile_image = vm.profile.profile_image[0]; 
             }
-            $log.info(vm.profile.profile_image.length, vm.profile); 
 
             JobService.get(function(data){
                 vm.jobs = data.elements;
@@ -26,12 +25,11 @@
                     var selected_job = vm.jobs.find(function(job){return user_job.id === job.id});
                     if (selected_job) selected_job.selected = true;
                 });
-                $log.info(vm.jobs);
             }, function(errors){
-                $log.error(errors);
+                ErrorToast(errors);
             });
         }, function(errors){    
-            $log.error(errors)
+            ErrorToast(errors)
         })
 
         vm.updateProfile = updateProfile;
@@ -58,10 +56,10 @@
             $log.info(vm.profile);
             ProfileService.update(vm.profile,function(data){
                 vm.profile = data.element;
-                $log.info(vm.profile);
+                toastr.info('Votre profile a été mis a jour');
                 vm.disabled = false;
             }, function(error){
-                $log.error(error);
+                ErrorToast(error);
                 vm.disabled = false;
             });
         }
@@ -72,12 +70,14 @@
                 url: API_ENDPOINT+'upload/profile',
                 data: {profile_image: file}
             }).then(function (resp) {
-                vm.profile = resp.data.element;
+                vm.profile.profile_image = resp.data.element.profile_image;
                 if (vm.profile.profile_image.length > 0) {
                     vm.profile_image = vm.profile.profile_image[0]; 
                 }
+                
+                toastr.info('Votre photo de profile à été charger');
             }, function (resp) {
-                $log.warn('Error status: ' + resp.status);
+                ErrorToast(resp);
             }, function (evt) {
                 vm.progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
             });
@@ -88,9 +88,10 @@
                 url: API_ENDPOINT+'upload',
                 data: {file: file}
             }).then(function (resp) {
-                vm.profile = resp.data.element;
+                vm.profile.files = resp.data.element.files;
+                toastr.info('Votre photo a été charger');
             }, function (resp) {
-                $log.warn('Error status: ' + resp.status);
+                ErrorToast(resp);
             }, function (evt) {
                 vm.uploadPercentage = parseInt(100.0 * evt.loaded / evt.total);
             });
@@ -99,8 +100,9 @@
         function deleteFile(fileId, index){
             FileService.delete({fileId: fileId}, function(){
                 vm.profile.files.splice(index, 1);
+                toastr.info('Votre photo a été supprimer');
             }, function(errors){
-                $log.error(errors);
+                ErrorToast(errors);
             });
         }
     }

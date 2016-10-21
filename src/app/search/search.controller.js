@@ -5,14 +5,14 @@
         .module('app.search')
         .controller('SearchController', SearchController);
 
-    function SearchController($scope, $log, $rootScope, SearchService, UserService, JobService, toastr){
+    function SearchController($scope, $log, $rootScope, SearchService, UserService, JobService, ErrorToast){
         var vm = this;
+
         vm.users = [];
         vm.jobs = [];
-        vm.pages = [];
         vm.selectedJobs = [];
-        vm.current_page = 1;
         vm.line_elements = 3;
+        vm.itemsLimit = 6;
         vm.default_profile_image = "assets/images/avatar.png";
 
         JobService.get(function(data){
@@ -24,10 +24,10 @@
                 vm.selectedJobs = search.jobs;
                 vm.location = search.location;
                 delete $rootScope.search;
-                getUsers();
-            }else{
-                getUsers();
             }
+            getUsers();
+        }, function(errors){
+            ErrorToast(errors);
         });
 
         vm.getUsers = getUsers;
@@ -69,14 +69,17 @@
             var searchParams = {
                 jobs: vm.selectedJobs, 
                 location: vm.location, 
-                limit:6
+                limit: vm.itemsLimit
             }
 
             SearchService.search({page: vm.current_page}, searchParams, function(data){
                 vm.users = data.elements;
-                console.table(vm.users); 
                 vm.pages = new Array(data.total_pages);
                 updateOnScreenChange();
+            }, function(errors){
+                ErrorToast(errors);
+                vm.current_page = 1;
+                getUsers();
             });
         }
  

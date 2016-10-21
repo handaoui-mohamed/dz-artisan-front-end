@@ -5,13 +5,13 @@
         .module('app')
         .run(run);
     
-    function run($auth, $log, $rootScope,$state, $location, $window, UserService) {
+    function run($auth, $log, $rootScope,$state, $location, $window, UserService, ErrorToast) {
         var user_id = $window.localStorage['current_user'];
         if (user_id){
             UserService.get({userId: user_id}, function(data){
                 $rootScope.current_user = data.element;
             }, function(errors){
-                $log.error(errors);
+                ErrorToast(errors);
             });
         }       
 
