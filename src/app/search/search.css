@@ -1,7 +1,7 @@
-/*.advanced-search{
-    margin-top: 15px;
-    float: right;
-    width: 22%;
+.advanced-search{
+    margin-top:10px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .advanced-search a{
@@ -11,7 +11,19 @@
 .advanced-search a:hover, .advanced-search a:focus{
     text-decoration: none;
     color: #1396e2;
-}*/
+}
+
+.advanced-Search-form{
+    margin-top:10px;
+}
+
+.advanced-search-bar input{
+    border-radius: 5px;
+    width: 100% !important;
+    height: 40px;
+    border-color: transparent;
+    padding: 5px;
+}
 
 .profile-img {
     width: 150px;
@@ -28,17 +40,17 @@
 .search-bar  input::-webkit-input-placeholder {
 color:#666!important;
 }
- 
+
 .search-bar input:-moz-placeholder { /* Firefox 18- */
-color:#666!important;  
+color:#666!important;
 }
- 
+
 .search-bar input::-moz-placeholder {  /* Firefox 19+ */
-color:#666!important;  
+color:#666!important;
 }
- 
-.search-bar input:-ms-input-placeholder {  
-color:#666!important;  
+
+.search-bar input:-ms-input-placeholder {
+color:#666!important;
 }
 
 
@@ -168,7 +180,7 @@ nav.vertical ul li{	display:block;}/* vertical menu */
 nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
-/*--loginprofil form start here--*/ 
+/*--loginprofil form start here--*/
 
 
 .loginprofil {

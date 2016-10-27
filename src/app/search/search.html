@@ -8,20 +8,20 @@
             <div class="headerservices-search">
             <form>
                 <div class="search search-bar" >
-                    <input  places-auto-complete 
+                    <input  places-auto-complete
                             component-restrictions="{country:'dz'}"
                             types="['geocode']"
                             on-place-changed="vm.placeChanged()"
-                            type="search" class="search-field" placeholder="Search" 
+                            type="search" class="search-field" placeholder="Rechercher"
                             name="search" ng-model="vm.searchInput">
                 </div>
                 <div class="section_roomservice">
                     <multiselect class="search-job"
                         ng-model="vm.selectedJobs"
-                        options="job.name for job in vm.jobs" 
-                        data-multiple="true" 
-                        data-compare-by="id" 
-                        scroll-after-rows="5" 
+                        options="job.name for job in vm.jobs"
+                        data-multiple="true"
+                        data-compare-by="id"
+                        scroll-after-rows="5"
                         filter-after-rows="5"
                         max-width="100"
                         ms-header="Tous les métiers"
@@ -30,19 +30,26 @@
                     </multiselect>
                 </div>
                 <div class="sear-sub">
-                    <input class="search-button" type="submit" value=" "  ng-click="vm.getUsers()">
+                    <input class="search-button" type="submit" value=" " ng-click="vm.getUsers()">
                 </div>
-                <!--<div class="advanced-search">
-                    <a href="" >Rechreche Avancée</a>
-                </div>-->
+                <div class="clearfix"></div>
+            </form>
+            <div class="advanced-search">
+                <a href="" ng-click="vm.showAdvancedSearch = !vm.showAdvancedSearch">Rechreche Avancée</a>
+            </div>
+            <form class="advanced-Search-form" ng-if="vm.showAdvancedSearch">
+                <div class="advanced-search-bar search-bar" >
+                    <input  type="number" placeholder="Rayon de Recherche"
+                            name="search" ng-model="vm.search_area">
+                </div>
                 <div class="clearfix"></div>
             </form>
         </div>
     </div>
-    
+
 	<h3 class="text-center search-title">Artisan a votre disposition</h3>
     <div ng-repeat="user in vm.users track by $index">
-        <div class="col-xs-12 col-sm-6 col-md-4 article-post">  	
+        <div class="col-xs-12 col-sm-6 col-md-4 article-post">
             <div class="headerprofil">
                 <div class="textprofil">
                     <div ui-sref="userprofile({username: user.username})" class="profile-img" ng-style="{'background': 'url({{ user.profile_image[0].path || vm.default_profile_image }}) center center'}"></div>
@@ -50,46 +57,46 @@
                     <a href="mailto:{{ user.email }}"><p>@{{ user.username }}</p></a>
                 </div>
             </div>
-        
+
             <ul class="contentprofil">
                 <li class="menuprofil">
                         <ul>
-                        <li class="button"><a href="#">Métiers<span class="iconprofil statprofil"> </span></a></li>          	
+                        <li class="button"><a href="#">Métiers<span class="iconprofil statprofil"> </span></a></li>
                         <li class="dropdown">
                             <ul class="icon-navigationprofil" ng-repeat="job in user.jobs">
                                 <li><a >{{ job.name }}</a></li>
                             </ul>
                         </li>
-                    </ul>      
-                </li>     
+                    </ul>
+                </li>
                 <li class="menuprofil">
                     <ul>
                         <li class="button"><a href="#" >Contact<span class="iconprofil"> </span></a></li>
                         <li class="dropdown">
                             <ul class="icon-navigationprofil">
                                 <li><a >Téléphone: {{ user.phone_number }}</a></li>
-                                <li><a >Adresse: {{ user.address }}</a></li> 
+                                <li><a >Adresse: {{ user.address }}</a></li>
                                 <li class="visit-profile"><a href="" ui-sref="userprofile({username: user.username})">Visité profil</a></li>
-                                
+
                             </ul>
                         </li>
-                    </ul>   		  
+                    </ul>
                 </li>
             </ul>
         </div>
-        <div ng-if="($index + 1) % vm.line_elements === 0" class="clearfix"> </div>	
+        <div ng-if="($index + 1) % vm.line_elements === 0" class="clearfix"> </div>
         <div ng-if="$last"><script type="text/javascript" src="assets/js/scriptprofil.js"></script></div>
     </div>
     </div>
-							
-    <div class="clearfix"> </div>	
+
+    <div class="clearfix"> </div>
     <div class="blog-pagenat">
         <ul>
             <li><a href="" ng-click="vm.previousPage()">Précédant</a></li>
             <li class="search-pages" ng-repeat="page in vm.pages track by $index"
-                ng-if="(vm.current_page >= $index && vm.current_page - $index < 6) || 
+                ng-if="(vm.current_page >= $index && vm.current_page - $index < 6) ||
                 (vm.current_page <= $index && $index - vm.current_page < 5)">
-                <a ng-class="{'current-page': vm.current_page === $index + 1}" 
+                <a ng-class="{'current-page': vm.current_page === $index + 1}"
                         href="" ng-click="vm.changePage($index + 1)">{{ $index + 1}}</a></li>
             <li class="search-next-page"><a class="last" href="" ng-click="vm.nextPage()">Suivant</a></li>
 

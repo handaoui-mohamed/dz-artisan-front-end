@@ -13,6 +13,7 @@
         vm.selectedJobs = [];
         vm.line_elements = 3;
         vm.itemsLimit = 6;
+        vm.current_page = 1;
         vm.default_profile_image = "assets/images/avatar.png";
 
         JobService.get(function(data){
@@ -67,9 +68,10 @@
 
         function getUsers(){
             var searchParams = {
-                jobs: vm.selectedJobs, 
-                location: vm.location, 
-                limit: vm.itemsLimit
+                jobs: vm.selectedJobs,
+                location: vm.location,
+                limit: vm.itemsLimit,
+                search_area: (vm.search_area || 5)
             }
 
             SearchService.search({page: vm.current_page}, searchParams, function(data){
@@ -82,7 +84,7 @@
                 getUsers();
             });
         }
- 
+
         /*Jquery function for screen size*/
         function updateOnScreenChange(){
             changeElementAlignement();

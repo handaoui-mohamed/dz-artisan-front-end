@@ -5,12 +5,19 @@
         .module('app.auth')
         .controller('AuthController', AuthController);
 
-    function AuthController($log, $auth, $window, $state, $rootScope, RegisterService, toastr) {
+    function AuthController($log, $auth, $window, $state, $rootScope, RegisterService, toastr, ErrorToast) {
         var vm = this;
 
         vm.register = false;
         vm.loginUser = loginUser;
         vm.registerUser = registerUser;
+
+        vm.user = {
+            username: "handaoui_mohamed",
+            email:"dm_handaoui@esi.dz",
+            password: "123456",
+            confirm_password: "123456"
+        }
 
         function registerUser(){
             vm.disableSubmit = true;
@@ -18,8 +25,9 @@
             RegisterService.save(vm.user,function(){
                 vm.loginUser();
                 toastr.success('Connexion en cours ...', 'Création de compte avec succee:');
-            }, function(){
-                toastr.error('Le nom d\'utilisateur exite déja', 'Error lors de la Création de votre compte:');
+            }, function(error){
+                console.log(error);
+                ErrorToast(error);
                 vm.disableSubmit = false;
             });
         }
@@ -38,8 +46,8 @@
                      toastr.error('Le nom d\'utilisateur ou mot de passe incorrect!', 'Error de connexion:');
                 }
                 vm.disableSubmit = false;
-            }, function () {
-                toastr.error('Le nom d\'utilisateur ou mot de passe incorrect!', 'Error de connexion:');
+            }, function (error) {
+                ErrorToast(error);
                 vm.disableSubmit = false;
             });
         }

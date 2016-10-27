@@ -28,7 +28,7 @@
             'update':{
                 method: 'PUT'
             }
-        }) 
+        })
     }
 
 
@@ -36,7 +36,6 @@
         return function(errors){
             switch (errors.status){
                 case 400:
-                    toastr.warning("Le contenu que vous avez demandé n'existe pas");
                     for (var fieldName in errors.data['form_errors']) {
                         if (errors.data['form_errors'].hasOwnProperty(fieldName)) {
                             toastr.warning(errors.data['form_errors'][fieldName][0]);
@@ -56,4 +55,4 @@
             }
         }
     }
-})(); 
+})();
