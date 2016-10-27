@@ -1,3 +1,7 @@
+.search-bar{
+    color: #222!important;
+}
+
 .search-job div.btn-group{
     width: 100%
 }
@@ -16,6 +20,7 @@
 
 .search-job button div{
     max-width: 150px !important;
+    float: left;
 }
 
 .online_reservation{
@@ -83,7 +88,7 @@ select {
   -moz-border-radius: 4px;
   -o-border-radius: 4px;
     cursor: pointer;
-  
+
 }
 select option{
 	border: 1px solid #DFDFDF;
@@ -138,7 +143,7 @@ select option{
 }
 /*-- responsive --*/
 @media(max-width:1440px){
-	
+
 }
 /*-- responsive --*/
 @media(max-width:1366px){
@@ -260,7 +265,7 @@ select {
 }
 
 
-/*--A Design by W3layouts 
+/*--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
@@ -281,7 +286,7 @@ font-family: 'Open Sans', sans-serif!important;
 }
 a:hover{
  text-decoration:none;
- 
+
 }
 
 .medicinal-w3-top {
@@ -347,8 +352,8 @@ a:hover{
 	-mz-border-radius: 50%;
 	-ms-border-radius: 50%;
 	content: '';
-	-webkit-box-sizing: content-box; 
-	-moz-box-sizing: content-box; 
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 }
 
@@ -365,7 +370,7 @@ a:hover{
 .hi-icon-effect-7 .hi-icon {
 	-webkit-transition: background 0.2s, color 0.2s;
 	-moz-transition: background 0.2s, color 0.2s;
-	transition: background 0.2s, color 0.2s;	
+	transition: background 0.2s, color 0.2s;
 }
 
 .hi-icon-effect-7 .hi-icon:hover {
@@ -595,10 +600,10 @@ a.hi-icon.icon4:hover {
 }
 @media (max-width: 1366px) {
 
-	
+
 }
 @media (max-width:1280px) {
-	
+
 }
 @media (max-width:1080px) {
 	.nav-tabs>li>a {
@@ -610,7 +615,7 @@ a.hi-icon.icon4:hover {
 		margin-top: 0em;
 		font-size: 0.9em;
 	}
-	.span_1_of_2 h4 { 
+	.span_1_of_2 h4 {
       font-size: 1em;
 	}
 	.sub-hd h3.tittle {
@@ -709,7 +714,7 @@ a.hi-icon.icon4:hover {
 		font-size:1em;
 		margin: 0;
 	}
-	
+
 	.nbs-flexisel-nav-left, .nbs-flexisel-nav-right {
 		width: 45px;
 		height:53px;
@@ -885,7 +890,7 @@ a.hi-icon.icon4:hover {
 		margin-top:0em;
 	}
 	.medicinal-w3-grids.one {
-		margin-top: 3em;	
+		margin-top: 3em;
 	}
 	.item, .item-hover, .item-hover .mask, .item-img, .item-info {
 		height: 182px;
@@ -1748,7 +1753,7 @@ a.hi-icon.icon4:hover {
 		font-size:0.9em;
 		margin: 0;
 	}
-	
+
 	.prom-left,.prom-right {
 		padding:0.8em;
 	}

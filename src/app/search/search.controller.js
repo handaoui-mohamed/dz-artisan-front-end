@@ -72,7 +72,7 @@
                 jobs: vm.selectedJobs,
                 location: vm.location,
                 limit: vm.itemsLimit,
-                search_area: (vm.search_area || 5)
+                search_area: Math.abs(vm.activate_search_area ?  9999 : vm.search_area || 10)
             }
 
             SearchService.search({page: vm.current_page}, searchParams, function(data){

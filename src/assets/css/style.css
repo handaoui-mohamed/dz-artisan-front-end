@@ -58,11 +58,11 @@ body a{
 }
 .section_roomservice{
     float: left;
-    width: 33%;	
+    width: 33%;
 }
 .sear-sub{
     float: left;
-    width: 10%;		
+    width: 10%;
 }
 .headerservices-middle {
     padding: 9px 0px;
@@ -80,17 +80,17 @@ body a{
 }
 
 @media (max-width:1080px) {
-	
+
 	.headerservices-search {
 		width: 57%;
 		margin: 0 auto;
 	}
-	
+
 
 }
 @media (max-width:1024px) {
-	
-	
+
+
 	.headerservices-search {
 		width: 57%;
 		margin: 0 auto;
@@ -98,7 +98,7 @@ body a{
 }
 
 @media (max-width:800px) {
-	
+
 	.headerservices-search {
 		width: 71%;
 		margin: 0 auto;
@@ -107,12 +107,12 @@ body a{
 
 
 @media (max-width:640px) {
-	
+
 	.headerservices-search {
 		width: 96%;
 		margin: 0 auto;
 	}
-	
+
 }
 
 @media (max-width:480px) {
@@ -130,13 +130,13 @@ body a{
 		width: 72%;
 		margin-left: 3.5em;
 	}
-	
-	
+
+
 }
 
 @media (max-width:384px) {
-	
-	
+
+
 	.headerservices-middle input[type="search"] {
 		padding: 9px 9px;
 		font-size: 14px;
@@ -151,7 +151,7 @@ body a{
 		width: 100%;
 		height: 38px;
 	}
-	
+
 	.search {
 		float: left;
 		width: 100%;
@@ -161,8 +161,8 @@ body a{
 		float: left;
 		width: 85%;
 	}
-	
-	
+
+
 }
 
 
@@ -174,9 +174,9 @@ input[type="button"],input[type="submit"]{
 	-ms-transition:0.5s all;
 }
 h1,h2,h3,h4,h5,h6{
-	margin:0;	
+	margin:0;
 	padding:0;
-}	
+}
 p{
 	margin:0;
 	padding:0;
@@ -269,7 +269,7 @@ body {
 
 .cl-effect-20 a:hover span::before,
 .cl-effect-20 a:focus span::before {
-	-webkit-transform: rotateX(10deg);	
+	-webkit-transform: rotateX(10deg);
 	-moz-transform: rotateX(10deg);
 	transform: rotateX(10deg);
 }
@@ -346,14 +346,14 @@ body {
 /*-- About Section --*/
 section.about-us {
 	padding:100px 0;
-} 
+}
 section.about-us h3.text-center, section.our-services h3.text-center, section.our-events h3.text-center, section.our-gallery h3.text-center, section.our-testimonials h3.text-center, section.our-contacts h3.text-center {
 	font-size:35px;
 	font-weight:normal;
 	/*-- Agile ITS --*/
 	padding:20px 0;
 	font-family: 'Montserrat', sans-serif;
-} 
+}
 section.about-us p.text-center , section.our-services p.text-center, section.our-events p.text-center, section.our-gallery p.text-center, section.our-testimonials p.text-center, section.our-contacts p.text-center {
 	font-size:18px;
 	font-weight:300;
@@ -384,11 +384,11 @@ section.our-services {
 	-moz-background-size:cover;
 	-o-background-size:cover;
 }
-section.our-services h3.text-center{ 
+section.our-services h3.text-center{
 	color:#000;
 	font-family: 'Montserrat', sans-serif;
 }
-section.our-services p.text-center{ 
+section.our-services p.text-center{
 	color: #000;
 }
 #features .ac a{
@@ -482,10 +482,10 @@ Darkbox
     background:rgba(0,0,0,0.8) no-repeat none 50%;
     background-size: contain;
     box-shadow:0 0 0 3000px rgba(0,0,0,0.8);
-    opacity:0; 
+    opacity:0;
     visibility:hidden;
 }
-#darkbox.on{ 
+#darkbox.on{
     opacity:1;
     visibility:visible;
     height:90% !important;
@@ -563,7 +563,7 @@ section.our-testimonials {
 	-moz-background-size:100% 100%;
 	-o-background-size:100% 100%;
 }
-section.our-testimonials h3.text-center { 
+section.our-testimonials h3.text-center {
 	color:#fff;
 }
 section.our-testimonials p.text-center {
@@ -626,7 +626,7 @@ section.our-contacts p.text-center {
     padding: 0px 0 80px;
     color:#fff;
 }
-section.our-contacts .form-control { 
+section.our-contacts .form-control {
 	border:1px solid rgba(255, 255, 255, 0.03);
     border-radius: 0px;
 	height: 50px;
@@ -635,35 +635,35 @@ section.our-contacts .form-control {
 	color:#fff;
 	background-color: rgba( 7, 56, 85, 0.3);
 }
-input::-webkit-input-placeholder {
+.main-contact input::-webkit-input-placeholder {
 color:#fff!important;
 }
- 
-input:-moz-placeholder { /* Firefox 18- */
-color:#fff!important;  
+
+.main-contact input:-moz-placeholder { /* Firefox 18- */
+color:#fff!important;
 }
- 
-input::-moz-placeholder {  /* Firefox 19+ */
-color:#fff!important;  
+
+.main-contact input::-moz-placeholder {  /* Firefox 19+ */
+color:#fff!important;
 }
- 
-input:-ms-input-placeholder {  
-color:#fff!important;  
+
+.main-contact input:-ms-input-placeholder {  
+color:#fff!important;
 }
 textarea::-webkit-input-placeholder {
 color:#fff!important;
 }
- 
+
 textarea::-moz-placeholder { /* Firefox 18- */
-color:#fff!important;  
+color:#fff!important;
 }
- 
+
 textarea::-moz-placeholder {  /* Firefox 19+ */
-color:#fff!important;  
+color:#fff!important;
 }
- 
-textarea::-ms-input-placeholder {  
-color:#fff!important;  
+
+textarea::-ms-input-placeholder {
+color:#fff!important;
 }
 textarea.form-control {
 	height:150px!important;
@@ -687,7 +687,7 @@ textarea.form-control {
     border: solid 2px #1396e2;
     color:#fff;
     background:#1396e2;
-}  
+}
 button.btn-outline1 {
 	padding: 11px 50px;
     font-size: 21px;
@@ -769,7 +769,7 @@ section.footer .contact-info i.glyphicon.glyphicon-envelope:hover ,section.foote
 	margin-right: 3px;
 }
 section.footer .footer-center .form-control {
-	border-radius:0px;	
+	border-radius:0px;
 	background-color: rgba(0, 0, 0, 0.25);
 	color:#fff;
 	text-align: center;
@@ -779,13 +779,13 @@ section.footer .footer-center  input::-webkit-input-placeholder {
 color:#fff!important;
 }
 section.footer .footer-center  input:-moz-placeholder { /* Firefox 18- */
-color:#fff!important;  
+color:#fff!important;
 }
 section.footer .footer-center  input::-moz-placeholder {  /* Firefox 19+ */
-color:#fff!important;  
+color:#fff!important;
 }
-section.footer .footer-center  input:-ms-input-placeholder {  
-color:#fff!important;  
+section.footer .footer-center  input:-ms-input-placeholder {
+color:#fff!important;
 }
 button.btn-outline {
 	margin-top:8px;
@@ -828,7 +828,7 @@ section.footer .footer-right ul.social-icons2 li a i.fa.fa-facebook {
 	font-size:21px;
 	color:#fff;
 	text-align: center;
-    vertical-align: middle;	
+    vertical-align: middle;
 	 transition:0.5s all;
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
@@ -901,10 +901,10 @@ section.footer .footer-right ul.social-icons2 li a i.fa.fa-facebook:hover {
 section.footer .footer-right ul.social-icons2 li a i.fa.fa-twitter:hover {
 	background-color:#004A82;
 }
-section.footer .footer-right ul.social-icons2 li a i.fa.fa-linkedin:hover { 
+section.footer .footer-right ul.social-icons2 li a i.fa.fa-linkedin:hover {
 	background-color:#BB5E00;
 }
-section.footer .footer-right ul.social-icons2 li a i.fa.fa-google-plus:hover { 
+section.footer .footer-right ul.social-icons2 li a i.fa.fa-google-plus:hover {
 	background-color:#8A0B00;
 }
 /*-- /Footer --*/
@@ -913,12 +913,12 @@ section.footer .footer-right ul.social-icons2 li a i.fa.fa-google-plus:hover {
 .slide {
     /* The name of the animation */
     animation-name: slide;
-    -webkit-animation-name: slide; 
+    -webkit-animation-name: slide;
     /* The duration of the animation */
-    animation-duration: 1s; 
+    animation-duration: 1s;
     -webkit-animation-duration: 1s;
     /* Make the element visible */
-    visibility: visible; 
+    visibility: visible;
 }
 
 /* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
@@ -926,17 +926,17 @@ section.footer .footer-right ul.social-icons2 li a i.fa.fa-google-plus:hover {
     0% {
         opacity: 0;
         -webkit-transform: translateY(70%);
-    } 
+    }
     100% {
         opacity: 1;
         -webkit-transform: translateY(0%);
-    } 
+    }
 }
 @-webkit-keyframes slide {
     0% {
         opacity: 0;
         -webkit-transform: translateY(70%);
-    } 
+    }
     100% {
         opacity: 1;
         -webkit-transform: translateY(0%);
@@ -947,11 +947,11 @@ section.footer .footer-right ul.social-icons2 li a i.fa.fa-google-plus:hover {
 .cd-top {
  display: inline-block;
 
-	
+
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
- 
+
   height: 50px;
   width: 50px;
   position: fixed;
@@ -983,7 +983,7 @@ section.footer .footer-right ul.social-icons2 li a i.fa.fa-google-plus:hover {
 .cd-top.cd-fade-out {
   /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
   opacity: .5;
-} 
+}
 .cd-top:hover {
   background-color:#1396e2;
   opacity: 1;
@@ -1117,7 +1117,7 @@ section.footer {
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
     margin-left: 245px;
     margin-bottom: 20px;
-	font-size: 35px;	
+	font-size: 35px;
 }
 .contact-info {
     margin-left: 244px;
@@ -1337,7 +1337,7 @@ section.our-testimonials .test {
 }
 #features p {
     font-size: 16px;
-}	
+}
 .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
     margin: -11px 0 0 10px;
 }

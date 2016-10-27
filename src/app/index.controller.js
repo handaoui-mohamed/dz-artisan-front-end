@@ -4,13 +4,15 @@
     angular
         .module('app')
         .controller('AppController', AppController);
-    
-    function AppController($log, $auth, $window, $rootScope, $state) {
+
+    function AppController($log, $auth, $window, $rootScope, $state){
         var vm = this;
 
         vm.logout = logout;
+        vm.state = $state;
 
         function logout(){
+            $log.info($state.current);
             $window.localStorage.removeItem('current_user');
             $auth.logout();
             delete $rootScope.current_user;

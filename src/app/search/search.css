@@ -1,7 +1,12 @@
+.footer-left, .footer-center{
+    text-align: left;
+    color: white;
+}
+
 .animate-show {
   line-height: 20px;
   opacity: 1;
-  padding: 10px;
+  padding: 5px;
   background: #073855;
 }
 
@@ -98,23 +103,6 @@
     margin-left: 33%;
     cursor: pointer;
 }
-
-.search-bar  input::-webkit-input-placeholder {
-color:#666!important;
-}
-
-.search-bar input:-moz-placeholder { /* Firefox 18- */
-color:#666!important;
-}
-
-.search-bar input::-moz-placeholder {  /* Firefox 19+ */
-color:#666!important;
-}
-
-.search-bar input:-ms-input-placeholder {
-color:#666!important;
-}
-
 
 .search-job div.btn-group{
     width: 100%
