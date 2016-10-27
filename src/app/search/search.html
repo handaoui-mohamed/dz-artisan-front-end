@@ -34,13 +34,27 @@
                 </div>
                 <div class="clearfix"></div>
             </form>
-            <div class="advanced-search">
-                <a href="" ng-click="vm.showAdvancedSearch = !vm.showAdvancedSearch">Rechreche Avancée</a>
-            </div>
-            <form class="advanced-Search-form" ng-if="vm.showAdvancedSearch">
-                <div class="advanced-search-bar search-bar" >
-                    <input  type="number" placeholder="Rayon de Recherche"
-                            name="search" ng-model="vm.search_area">
+        </div>
+    </div>
+
+    <div style="width:100%" class="animate-show">
+        <div class="advanced-search">
+            <a href="" ng-click="vm.showAdvancedSearch = !vm.showAdvancedSearch">Rechreche Avancée</a>
+        </div>
+        <div class="headerservices-search">
+            <form class="advanced-Search-form animate-show" ng-show="vm.showAdvancedSearch">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="searchArea" id="searchArea" ng-model="vm.activate_search_area" value="">
+                            <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                            Recherche à proximité
+                        </label>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 advanced-search-bar search-bar">
+                    <input  type="number" placeholder="Rayon de Recherche en Km"
+                            name="search" ng-model="vm.search_area" ng-disabled="!vm.activate_search_area">
                 </div>
                 <div class="clearfix"></div>
             </form>

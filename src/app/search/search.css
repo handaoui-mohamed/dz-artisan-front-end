@@ -1,7 +1,73 @@
+.animate-show {
+  line-height: 20px;
+  opacity: 1;
+  padding: 10px;
+  background: #073855;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0;
+}
+
+.checkbox label:after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.checkbox label{
+    padding-left: 0 !important;
+    color: white;
+}
+
+.checkbox .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    float: left;
+    margin-right: .5em;
+}
+
+.checkbox .cr .cr-icon{
+    position: absolute;
+    font-size: .8em;
+    line-height: 0;
+    top: 50%;
+    left: 20%;
+}
+.checkbox label input[type="checkbox"]{
+    display: none;
+}
+
+.checkbox label input[type="checkbox"] + .cr > .cr-icon{
+    transform: scale(3) rotateZ(-20deg);
+    opacity: 0;
+    transition: all .3s ease-in;
+}
+
+.checkbox label input[type="checkbox"]:checked + .cr > .cr-icon{
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+}
+
+.checkbox label input[type="checkbox"]:disabled + .cr{
+    opacity: .5;
+}
+
+
 .advanced-search{
-    margin-top:10px;
-    margin-bottom: 10px;
     text-align: center;
+    padding-bottom: 10px;
+    background-color: #073855;
 }
 
 .advanced-search a{
@@ -13,13 +79,9 @@
     color: #1396e2;
 }
 
-.advanced-Search-form{
-    margin-top:10px;
-}
-
 .advanced-search-bar input{
     border-radius: 5px;
-    width: 100% !important;
+    width: 100%;
     height: 40px;
     border-color: transparent;
     padding: 5px;

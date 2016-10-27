@@ -15,6 +15,7 @@
         vm.itemsLimit = 6;
         vm.current_page = 1;
         vm.default_profile_image = "assets/images/avatar.png";
+        vm.activate_search_area = true;
 
         JobService.get(function(data){
             vm.jobs = data.elements;
