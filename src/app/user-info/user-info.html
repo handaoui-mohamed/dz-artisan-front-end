@@ -67,9 +67,10 @@
 						<div class="resp-tabs-container">
 							<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
 								<div class="col-md-3 team-gd yes_marg" ng-repeat="file in vm.user.files">
-									<div class="thumb">
+									<div class="thumb" data-toggle="modal" data-target="#myModal"
+									ng-click="vm.selectedFile = file.path; vm.printfile()">
 										<a href="" class="portfolio-link b-link-diagonal b-animate-go" data-toggle="modal">
-                                            <img class="user-work-picture" ng-src="{{ file.path }}" alt="">
+                                            <img class="user-work-picture"  ng-src="{{ file.path }}" alt="">
 										<div class="team_pos">
 											<ul>
 												<li>
@@ -93,6 +94,20 @@
 	</div>
 </div>
 <!-- //portfolio -->
+
+<div class="modal fade" id="myModal" role="dialog" >
+    <div class="modal-dialog modal-lg" >
+        <div class="modal-content" style="background-color: #2b303b">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+            </div>
+            <div class="modal-body selected-picture-modal">
+				<img class="selected-picture" ng-src="{{ vm.selectedFile }}" alt="">
+            </div>
+        </div>
+
+    </div>
+</div>
 
 
 <script type="text/javascript" src="assets/js/jquery.zoomslider.min.js"></script>

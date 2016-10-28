@@ -17,20 +17,20 @@
         angular.extend(toastrConfig, {
             autoDismiss: true,
             containerId: 'toast-container',
-            maxOpened: 1,    
+            maxOpened: 1,
             newestOnTop: true,
             positionClass: 'toast-bottom-left',
             preventDuplicates: false,
             preventOpenDuplicates: false,
             target: 'body',
             closeButton: true,
-            extendedTimeOut: 500,
+            extendedTimeOut: 1000,
             iconClasses: {
                 error: 'toast-error',
                 info: 'toast-info',
-                success: 'toast-success', 
+                success: 'toast-success',
                 warning: 'toast-warning'
-            }, 
+            }
         });
     }
 })();

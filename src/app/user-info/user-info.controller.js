@@ -16,5 +16,11 @@
             $state.go('search');
             ErrorToast(errors);
         });
+
+        vm.printfile = printfile;
+
+        function printfile(){
+            $log.info(vm.selectedFile); 
+        }
     }
 })();

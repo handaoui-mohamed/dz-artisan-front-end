@@ -12,26 +12,18 @@
         vm.loginUser = loginUser;
         vm.registerUser = registerUser;
 
-        vm.user = {
-            username: "handaoui_mohamed",
-            email:"dm_handaoui@esi.dz",
-            password: "123456",
-            confirm_password: "123456"
-        }
-
         function registerUser(){
             vm.disableSubmit = true;
             toastr.clear([toastr]);
             RegisterService.save(vm.user,function(){
-                vm.loginUser();
                 toastr.success('Connexion en cours ...', 'Création de compte avec succee:');
+                vm.loginUser();
             }, function(error){
-                console.log(error);
                 ErrorToast(error);
                 vm.disableSubmit = false;
             });
         }
-
+ 
         function loginUser(){
             vm.disableSubmit = true;
             toastr.clear([toastr]);

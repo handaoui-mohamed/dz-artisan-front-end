@@ -6,11 +6,11 @@
             'ngSanitize',
             'ui.router',
             'ngResource',
-            'ngAnimate', 
-            'ngCookies', 
+            'ngAnimate',
+            'ngCookies',
             'ngTouch',
-            'ngMessages', 
-            'ngAria', 
+            'ngMessages',
+            'ngAria',
             'ui.multiselect',
             'toastr',
             'ngMap',
@@ -19,6 +19,7 @@
             'app.auth',
             'app.profile',
             'app.search',
-            'app.user_info'
+            'app.user_info',
+            'app.contact'
         ]);
 })();

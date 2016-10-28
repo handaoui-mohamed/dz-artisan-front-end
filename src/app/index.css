@@ -42,7 +42,7 @@ body a{
     background-size: 5% !important;
 }
 .headerservices-middle form input[type="submit"]{
-    background: url(../images/search.png) no-repeat 4px 0px #e45753;
+    background: url(../assets/images/search.png) no-repeat 4px 0px #e45753;
     width: 100%;
     height: 50px;
     border: none;
@@ -142,10 +142,10 @@ body a{
 	.section_roomservice select {
 		padding: 11px 8px;
 		font-size: 15px;
-		background: url(../images/arrow_down.png) no-repeat 92% center #ffffff;
+		background: url(../assets/images/arrow_down.png) no-repeat 92% center #ffffff;
 	}
 	.headerservices-middle form input[type="submit"] {
-		background: url(../images/search.png) no-repeat -2px -5px #e45753;
+		background: url(../assets/images/search.png) no-repeat -2px -5px #e45753;
 		width: 100%;
 		height: 38px;
 	}
@@ -374,7 +374,7 @@ section.about-us p.abt {
 /*-- Services Section --*/
 section.our-services {
 	padding:100px 0;
-	background:url(../images/service.jpg) no-repeat;
+	background:url(../assets/images/service.jpg) no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size:cover;
@@ -418,7 +418,7 @@ section.our-services img.img-responsive {
 /*-- Events Section --*/
 section.our-events {
 	padding:100px 0;
-	background:url(../images/event.jpg) no-repeat;
+	background:url(../assets/images/event.jpg) no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size:100% 100%;
@@ -553,7 +553,7 @@ Darkbox
 /*-- Testimonial Section --*/
 section.our-testimonials {
 	padding:100px 0;
-	background:url(../images/test1.jpg) no-repeat;
+	background:url(../assets/images/test1.jpg) no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size:100% 100%;
@@ -607,7 +607,7 @@ section.map iframe.googlemaps {
 /*-- Contact Section --*/
 section.our-contacts {
 	padding:100px 0;
-	background:url(../images/contact.jpg) no-repeat;
+	background:url(../assets/images/pic2.jpg) no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size:100% 100%;
@@ -668,7 +668,7 @@ textarea.form-control {
 }
 .btn-outline1 {
     margin-top: 15px;
-    border: solid 2px #1396e2;
+    border-color: transparent;
     font-size: 20px;
     color:#fff;
 	width:100%;
@@ -960,7 +960,7 @@ section.footer .footer-right ul.social-icons2 li a i.fa.fa-google-plus:hover {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: #073855 url(../images/cd-top-arrow.svg) no-repeat center 50%;
+  background: #073855 url(../assets/images/cd-top-arrow.svg) no-repeat center 50%;
   visibility: hidden;
     background-size: 20px;
   opacity: 0;
