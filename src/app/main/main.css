@@ -23,9 +23,6 @@
     float: left;
 }
 
-.online_reservation{
-	z-index: 999;
-}
 .b_user{
 	margin:0 auto;
 	width: 75%;

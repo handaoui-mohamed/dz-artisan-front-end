@@ -37,32 +37,32 @@
 .profile input::-webkit-input-placeholder {
 color:#666!important;
 }
- 
+
 .profile input:-moz-placeholder { /* Firefox 18- */
-color:#666!important;  
+color:#666!important;
 }
- 
+
 .profile input::-moz-placeholder {  /* Firefox 19+ */
-color:#666!important;  
+color:#666!important;
 }
- 
-.profile input:-ms-input-placeholder {  
-color:#666!important;  
+
+.profile input:-ms-input-placeholder {
+color:#666!important;
 }
 .profile textarea::-webkit-input-placeholder {
 color:#666!important;
 }
- 
+
 .profile textarea::-moz-placeholder { /* Firefox 18- */
-color:#666!important;  
+color:#666!important;
 }
- 
+
 .profile textarea::-moz-placeholder {  /* Firefox 19+ */
-color:#666!important;  
+color:#666!important;
 }
- 
-.profile textarea::-ms-input-placeholder {  
-color:#666!important;  
+
+.profile textarea::-ms-input-placeholder {
+color:#666!important;
 }
 .profile textarea.form-control {
 	height:150px!important;

@@ -1,9 +1,7 @@
-/*--Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
-/*-- reset code --*/
+.capitalize{
+    text-transform: capitalize;
+}
+
 .navbar-nav{
     margin: -10px !important;
 }
@@ -647,7 +645,7 @@ color:#fff!important;
 color:#fff!important;
 }
 
-.main-contact input:-ms-input-placeholder {  
+.main-contact input:-ms-input-placeholder {
 color:#fff!important;
 }
 textarea::-webkit-input-placeholder {

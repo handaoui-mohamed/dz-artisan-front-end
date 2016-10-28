@@ -12,7 +12,6 @@
         vm.state = $state;
 
         function logout(){
-            $log.info($state.current);
             $window.localStorage.removeItem('current_user');
             $auth.logout();
             delete $rootScope.current_user;
