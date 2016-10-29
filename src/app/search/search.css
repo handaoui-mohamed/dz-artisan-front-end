@@ -186,6 +186,7 @@
 .blog-pagenat {
   text-align: center;
   margin-top: 2em;
+  margin-bottom: 5em;
 }
 .blog-pagenat ul li {
   display: inline-block;

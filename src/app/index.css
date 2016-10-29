@@ -1,3 +1,7 @@
+a{
+    text-decoration: none!important;
+}
+
 .capitalize{
     text-transform: capitalize;
 }
@@ -1209,7 +1213,7 @@ section.footer .footer-center .form-control {
 @media (max-width: 736px) {
 .navbar-nav {
     margin:0 auto;
-    background-color: rgba(0, 0, 0, 0.58);
+    background-color: rgba(0, 0, 0, 0.95);
 }
 .cl-effect-20 a span {
 	width:100%;
