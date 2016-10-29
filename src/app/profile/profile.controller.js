@@ -10,12 +10,13 @@
         vm.jobs = [];
         vm.progressPercentage = 0;
         vm.uploadPercentage = 0;
-        vm.default_profile_image = "assets/images/avatar.png"        
+        vm.default_profile_image = "assets/images/avatar.png"
 
         ProfileService.get(function(data){
             vm.profile = data.element;
+            $log.info(vm.profile);
             if (vm.profile.profile_image.length > 0) {
-                vm.profile_image = vm.profile.profile_image[0]; 
+                vm.profile_image = vm.profile.profile_image[0];
             }
 
             JobService.get(function(data){
@@ -28,7 +29,7 @@
             }, function(errors){
                 ErrorToast(errors);
             });
-        }, function(errors){    
+        }, function(errors){
             ErrorToast(errors)
         })
 
@@ -72,9 +73,9 @@
             }).then(function (resp) {
                 vm.profile.profile_image = resp.data.element.profile_image;
                 if (vm.profile.profile_image.length > 0) {
-                    vm.profile_image = vm.profile.profile_image[0]; 
+                    vm.profile_image = vm.profile.profile_image[0];
                 }
-                
+
                 toastr.info('Votre photo de profile à été charger');
             }, function (resp) {
                 ErrorToast(resp);
