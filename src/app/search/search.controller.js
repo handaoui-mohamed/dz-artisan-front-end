@@ -23,7 +23,7 @@
             var search = $rootScope.search;
             if (search){
                 vm.searchInput = search.input;
-                vm.selectedJobs = search.jobs;
+                vm.selectedJobs = search.jobs || [];
                 vm.location = search.location;
                 delete $rootScope.search;
             }
@@ -70,10 +70,14 @@
         function getUsers(){
             var searchParams = {
                 jobs: vm.selectedJobs,
-                location: vm.location,
                 limit: vm.itemsLimit,
                 search_area: Math.abs(vm.activate_search_area ?  (vm.search_area || 10) : 9999)
             }
+
+            if (vm.location && vm.location.latitude && vm.location.longitude && vm.searchInput){
+                searchParams.location = vm.location;
+            }
+            else delete searchParams.location;
 
             SearchService.search({page: vm.current_page}, searchParams, function(data){
                 vm.users = data.elements;
