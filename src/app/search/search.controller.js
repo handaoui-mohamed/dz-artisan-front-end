@@ -37,6 +37,7 @@
         vm.previousPage = previousPage;
         vm.changePage = changePage;
         vm.placeChanged = placeChanged;
+        vm.bindDropDownEvents = bindDropDownEvents;
 
         function changePage(PageNumber){
             if (PageNumber !== vm.current_page){
@@ -82,7 +83,6 @@
             SearchService.search({page: vm.current_page}, searchParams, function(data){
                 vm.users = data.elements;
                 vm.pages = new Array(data.total_pages);
-                console.table(vm.users);
                 updateOnScreenChange();
             }, function(errors){
                 ErrorToast(errors);
@@ -105,6 +105,18 @@
             if (screenSize >= 1200) vm.line_elements = 3;
             else if (screenSize >= 768) vm.line_elements = 2;
             else vm.line_elements = 1;
+        }
+
+        function bindDropDownEvents(){
+            $(document).ready(function(){
+            	$.easing.def = "easeOutBounce";
+            	$('li.button a').click(function(e){
+            		var dropDown = $(this).parent().next();
+            		$('.dropdown').not(dropDown).slideUp('slow');
+            		dropDown.slideToggle('slow');
+            		e.preventDefault();
+            	})
+            });
         }
     }
 })();
