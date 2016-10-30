@@ -72,17 +72,17 @@
                 jobs: vm.selectedJobs,
                 location: vm.location,
                 limit: vm.itemsLimit,
-                search_area: Math.abs(vm.activate_search_area ?  9999 : vm.search_area || 10)
+                search_area: Math.abs(vm.activate_search_area ?  (vm.search_area || 10) : 9999)
             }
 
             SearchService.search({page: vm.current_page}, searchParams, function(data){
                 vm.users = data.elements;
                 vm.pages = new Array(data.total_pages);
+                console.table(vm.users);
                 updateOnScreenChange();
             }, function(errors){
                 ErrorToast(errors);
                 vm.current_page = 1;
-                getUsers();
             });
         }
 
