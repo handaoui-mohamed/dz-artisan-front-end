@@ -1,3 +1,7 @@
+.description-logo{
+	margin-top: -50px !important;
+}
+
 .btn-outline1:disabled{
     cursor: not-allowed;
 }
@@ -469,7 +473,6 @@ a:hover{
       line-height: 1.9em;
     margin-top: 0.7em;
     font-size: 0.9em;
-    color: #E0DFDF;
 }
 .medicinal-w3-grids h4 {
      text-transform: uppercase;
