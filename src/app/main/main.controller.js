@@ -34,5 +34,22 @@
             };
             $state.go('search');
         }
+
+        angular.element(document).ready(function(){
+            var owlOption = { 
+                items :1,
+                lazyLoad : true,
+                autoPlay : true,
+                navigation : false,
+                navigationText :  false,
+                pagination : true,
+            };
+            var $owl = $("#owl-demo").owlCarousel(owlOption);
+            setTimeout(function(){
+                $(".owl-carousel").each(function(){
+                    $(this).data('owlCarousel').updateVars();
+                });
+            },1500);
+        });
     }
 })();
