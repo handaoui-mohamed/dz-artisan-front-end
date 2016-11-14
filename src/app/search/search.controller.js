@@ -7,7 +7,6 @@
 
     function SearchController($scope, $log, $rootScope, SearchService, UserService, JobService, ErrorToast){
         var vm = this;
-
         vm.users = [];
         vm.jobs = [];
         vm.selectedJobs = [];

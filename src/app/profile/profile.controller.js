@@ -11,6 +11,8 @@
         vm.progressPercentage = 0;
         vm.uploadPercentage = 0;
         vm.default_profile_image = "assets/images/avatar.png"
+        
+        toastr.clear([toastr]);
 
         ProfileService.get(function(data){
             vm.profile = data.element;

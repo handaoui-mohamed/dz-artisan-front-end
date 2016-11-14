@@ -33,5 +33,9 @@
                 }
             }
         });
+
+        $rootScope.$on('$stateChangeSuccess', function(){
+            document.getElementById("scroll-to-top").click();
+        });
     }
 })();

@@ -1,5 +1,6 @@
 .description-logo{
 	margin-top: -50px !important;
+	height: 400px; 
 }
 
 .btn-outline1:disabled{
@@ -503,7 +504,7 @@ a.hi-icon.icon3 {
     margin: 0 auto;
 }
 a.hi-icon.icon4 {
-       background: url(../../assets/images/4.png) no-repeat 25px 30px #073855;
+       background: url(../../assets/images/4.png) no-repeat 28px 30px #073855;
     display: block;
     width:120px;
     height:120px;
@@ -519,13 +520,13 @@ a.hi-icon.icon3:hover{
 	   background: url(../../assets/images/3.png) no-repeat 25px 30px #1396e2;
 }
 a.hi-icon.icon4:hover {
-	   background: url(../../assets/images/4.png) no-repeat 25px 30px #1396e2;
+	   background: url(../../assets/images/4.png) no-repeat 28px 30px #1396e2;
 }
 .medicinal-w3-grid {
     margin-bottom:3em;
 }
 .medicinal-w3 {
-     padding: 6em 0 0 0;
+     padding: 0 0 0 0;
     background: url(../../assets/images/middle.jpg) no-repeat 0px 0px;
     min-height: 700px;
     background-size: cover;
@@ -543,7 +544,7 @@ a.hi-icon.icon4:hover {
     position: relative;
     text-align: center;
     color: #fff;
-    background-color:rgba( 7, 56, 85, 0.3);
+    background-color:rgba( 7, 56, 85, 0.5);
     border: 2px solid #1396e2;
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
@@ -586,8 +587,7 @@ a.hi-icon.icon4:hover {
 }
 .client-info span {
     display: block;
-    padding: 5px;
-    color: #444;
+    color: #fff;
 }
 #review {
     padding: 6em 0;
