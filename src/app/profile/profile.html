@@ -12,7 +12,7 @@
                 	<div>
 						<img class="img-thumbnail profile-img" ngf-thumbnail="vm.file || vm.profile_image.path || vm.default_profile_image">
 						<h2 class="capitalize" ng-if="vm.profile.full_name">{{ ::vm.profile.full_name }}</h2>
-        				<h2 ng-if="!vm.profile.full_name">{{ vm.profile.username }}</h2>
+        				<h2 ng-if="!vm.profile.full_name">{{ ::vm.profile.username }}</h2>
                         <br>
                         <button type="button" class="btn btn-warning" ngf-select="vm.uploadProfilePicture($file)">
                             <span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Changer la photo de profil
