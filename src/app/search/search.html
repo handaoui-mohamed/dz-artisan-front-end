@@ -63,6 +63,7 @@
 
 	<h3 class="text-center search-title">Artisan a votre disposition</h3>
     <div ng-repeat="user in vm.users track by $index" ng-init="$last ? vm.bindDropDownEvents() : angular.noop()">
+        <!-- TODO: add buffer circle (when loading new page)-->
         <div class="col-xs-12 col-sm-6 col-md-4 article-post">
             <div class="headerprofil">
                 <div class="textprofil">

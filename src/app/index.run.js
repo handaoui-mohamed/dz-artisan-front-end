@@ -16,6 +16,7 @@
         }       
 
         $rootScope.$on('$stateChangeStart', function (event, toState) {
+            // TODO: activate loading circle when changing state
             var notAllowedStates = ['/auth', '/reset'];
 
             if (notAllowedStates.indexOf($location.url()) === -1)
@@ -35,6 +36,7 @@
         });
 
         $rootScope.$on('$stateChangeSuccess', function(){
+            // TODO: deactivate loading circle when success changing state
             document.getElementById("scroll-to-top").click();
         });
     }
