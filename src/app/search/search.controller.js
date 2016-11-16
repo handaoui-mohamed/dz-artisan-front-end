@@ -87,7 +87,6 @@
                 updateOnScreenChange();
             }, function(errors){
                 ErrorToast(errors);
-                vm.current_page = 1;
             });
         }
 
