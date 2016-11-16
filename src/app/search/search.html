@@ -105,15 +105,15 @@
     <div class="clearfix"> </div>
     <div class="blog-pagenat">
         <ul>
-            <li><a href="" ng-click="vm.changePage(1)" class="page-navigation"><<</a></li>
-            <li><a href="" ng-click="vm.previousPage()" class="page-navigation"><</a></li>
+            <li><a href="" ng-click="vm.changePage(1)" class="page-navigation">{{ vm.left+vm.left }}</a></li>
+            <li><a href="" ng-click="vm.previousPage()" class="page-navigation">{{ vm.left }}</a></li>
             <li class="search-pages" ng-repeat="page in vm.pages track by $index"
                 ng-if="(vm.current_page >= $index && vm.current_page - $index < 5) ||
                 (vm.current_page <= $index && $index - vm.current_page < 3)">
                 <a ng-class="{'current-page': vm.current_page === $index + 1}"
                         href="" ng-click="vm.changePage($index + 1)">{{ $index + 1}}</a></li>
-            <li class="search-next-page"><a class="last page-navigation" href="" ng-click="vm.nextPage()">></a></li>
-            <li><a href="" ng-click="vm.changePage(vm.pages.length)" class="page-navigation">>></a></li>
+            <li class="search-next-page"><a class="last page-navigation" href="" ng-click="vm.nextPage()">{{ vm.right }}</a></li>
+            <li><a href="" ng-click="vm.changePage(vm.pages.length)" class="page-navigation">{{ vm.right+vm.right }}</a></li>
 
         </ul>
     </div>
