@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-12">
                 	<div>
-						<img class="img-thumbnail profile-img" ngf-thumbnail="vm.file || vm.profile_image.path || vm.default_profile_image">
+						<img class="img-thumbnail profile-img" fallback-src="assets/images/avatar.png" ngf-thumbnail="vm.file || vm.profile_image.path || vm.default_profile_image">
 						<h2 class="capitalize" ng-if="vm.profile.full_name">{{ ::vm.profile.full_name }}</h2>
         				<h2 ng-if="!vm.profile.full_name">{{ ::vm.profile.username }}</h2>
                         <br>
@@ -126,7 +126,7 @@
 									<button type="button" class="btn btn-danger file-delete" ng-click="vm.deleteFile(file.id, $index)">
 										<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer photo
 									</button>
-									<img class="img-thumbnail file-thum" ngf-thumbnail="file.path">
+									<img fallback-src="assets/images/default.png" class="img-thumbnail file-thum" ngf-thumbnail="file.path">
 								</div>
 							</div>
 						<br>

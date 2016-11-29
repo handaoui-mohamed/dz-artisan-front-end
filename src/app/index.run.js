@@ -38,6 +38,10 @@
         $rootScope.$on('$stateChangeSuccess', function(){
             // TODO: deactivate loading circle when success changing state
             document.getElementById("scroll-to-top").click();
-        });
+            angular.element(document).ready(function () {
+                $rootScope.hideSplash = true;
+            });
+        }); 
+        // AIzaSyDk5AKCS1B10uQJmyfwEV29PCs00mmQPEE
     }
 })();
