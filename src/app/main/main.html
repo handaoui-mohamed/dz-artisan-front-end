@@ -1,4 +1,7 @@
 <link href="app/main/main.css" rel="stylesheet" type="text/css" media="all" />
+<!-- required-js-files-->
+<link href="assets/css/owl.carousel.css" rel="stylesheet">
+<script src="assets/js/owl.carousel.js"></script>
 
 <!-- top carousel and search bar-->
 <div id="demo-1" class="carousel slide"
@@ -11,6 +14,8 @@
 				<div class="container1">
 				<div class="b_user">
 						<div class="searching_user"><br />
+						<div style="color:#fff" class="home-msg">Trouvez facilement le meilleur artisan près de chez vous à votre disposition à tout moment!</div>
+			
 							<div class="searching">
 								<ul>
 									<li class="span1_of_1">
@@ -64,7 +69,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6">
-				<img src="assets/images/about-img.jpg" alt="about" class="img-responsive slideanim">
+				<img src="assets/images/about-img.jpg" alt="about" class="img-responsive slideanim description-logo">
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<div class="about-info">
@@ -89,8 +94,7 @@
 
 <!-- Services Section -->
 <section class="our-services slideanim" id="service">
-	<h3 class="text-center slideanim">Our Services</h3>
-	<p class="text-center slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	<h3 class="text-center slideanim">Nos Services</h3>
 	<div class="medicinal-w3">
 		<div class="container">
 
@@ -105,7 +109,7 @@
 					</div>
 					<div class="col-md-4 medicinal-w3-right">
 						<div class="hi-icon-wrap hi-icon-effect-7 hi-icon-effect-7b">
-							<a href="#" class="hi-icon icon1"></a>
+							<a href="" class="hi-icon icon1" ui-sref='auth'></a>
 						</div>
 					</div>
 					<div class="clearfix"></div>
@@ -113,7 +117,7 @@
 				<div class="col-md-6 medicinal-w3-grid">
 					<div class="col-md-4 medicinal-w3-right">
 						<div class="hi-icon-wrap hi-icon-effect-7 hi-icon-effect-7b">
-							<a href="#" class="hi-icon icon2"></a>
+							<a href="" class="hi-icon icon2" ui-sref='auth'></a>
 						</div>
 					</div>
 					<div class="col-md-8 medicinal-w3-left1">
@@ -130,15 +134,14 @@
 			<div class="medicinal-w3-grids">
 				<div class="col-md-6 medicinal-w3-grid">
 					<div class="col-md-8 medicinal-w3-left">
-						<h4>LOREM IPSUM DOLOR</h4>
+						<h4>Rechercher un Artisan</h4>
 						<p>
-							sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-							 totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.
+							Chercher un artisan n'a jamais été plus facile que maintenant, avec un seul clique vous retrouviez tous les artisans à votre proximitée.
 						</p>
 					</div>
 					<div class="col-md-4 medicinal-w3-right">
 						<div class="hi-icon-wrap hi-icon-effect-7 hi-icon-effect-7b">
-							<a href="#" class="hi-icon icon3"></a>
+							<a href="" class="hi-icon icon3" ui-sref="search"></a>
 						</div>
 					</div>
 					<div class="clearfix"></div>
@@ -146,14 +149,13 @@
 				<div class="col-md-6 medicinal-w3-grid">
 					<div class="col-md-4 medicinal-w3-right">
 						<div class="hi-icon-wrap hi-icon-effect-7 hi-icon-effect-7b">
-							<a href="#" class="hi-icon icon4"></a>
+							<a href="" class="hi-icon icon4" ui-sref="contact"></a>
 						</div>
 					</div>
 					<div class="col-md-8 medicinal-w3-left1">
-						<h4>LOREM IPSUM DOLOR</h4>
+						<h4>Contacter Nous</h4>
 						<p>
-							sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-							 totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.
+							Si vous avez une question, sugestion ou autre chose vous pouvez nous contacter quand vous voullez.
 						</p>
 					</div>
 					<div class="clearfix"></div>
@@ -167,66 +169,53 @@
 
 <!-- Testimonials -->
 <section class="our-testimonials slideanim" id="testimonials">
-	<h3 class="text-center slideanim">What Our Clients Say</h3>
-	<p class="text-center slideanim">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	<h3 class="text-center slideanim">Nos utilisateurs témoignent !</h3>
 	<div id="review" class="testimonials-review">
 		<div class="container">
 				<div class="testimonials">
 				  <div class="monials">
 				      <!--//screen-gallery-->
-						<div class="sreen-gallery-cursual">
-							 <!-- required-js-files-->
-							<link href="assets/css/owl.carousel.css" rel="stylesheet">
-							    <script src="assets/js/owl.carousel.js"></script>
-							    <script>
-									$(document).ready(function() {
-										$("#owl-demo").owlCarousel({
-											items : 1,
-											lazyLoad : true,
-											autoPlay : true,
-											navigation : false,
-											navigationText :  false,
-											pagination : true,
-										});
-									});
-							    </script>
+						<div class="screen-gallery-cursual"> 
 								 <!--/required-js-files-->
 						       	<div id="owl-demo" class="owl-carousel">
 									<div class="item-owl">
 										<p class="speech">
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id
-												arcu neque, at convallis est felis.Lorem ipsum dolor sit amet, consectetur
-												adipiscing elit. Pellentesque id arcu neque, at convallis est felis.
+											Le coup classique, je rentre de soirée et me rends compte que j'ai perdu mes clefs. Grâce à votre App je n'ai pas eu à appeler 20 serruriers pour en trouver un disponible et honnête. Bon j'ai attendu 30 minutes qu'il arrive mais il a été sérieux et efficace pour venir m'ouvrir et tout ça au prix convenu à l'avance.
 										</p>
 										<div class="client-info">
-											<img src="assets/images/t1.jpg" alt=" " />
-											<h4>John Allen</h4>
-											<span>Lorem ipsum dolor</span>
+											<img src="assets/images/avatar.png" alt=" " />
+											<h4>Albdelhadi FEKHAR</h4>
+											<span>Client</span>
 										</div>
 									</div>
 					                <div class="item-owl">
 										<p class="speech">
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id arcu
-											 neque, at convallis est felis.Lorem ipsum dolor sit amet,
-											 consectetur adipiscing elit. Pellentesque id arcu neque,
-											 at convallis est felis.
+											L'artisanat, c'est avant tout un métier de service. Ce qui me plais le plus c'est le contact avec les clients: répondre à leur demandes, comprendre et bien cerner ce qu'ils désirent.
 										</p>
 										<div class="client-info">
 											<img src="assets/images/t2.jpg" alt=" " />
-											<h4>John Doe</h4>
-											<span>Lorem ipsum dolor</span>
+											<h4>FEKIH Anis</h4>
+											<span>Serrurier</span>
+										</div>
+									</div>
+					                <div class="item-owl">
+										<p class="speech">
+											C'est pratique de pouvoir sélectionner rapidement un pro à côté de chez soi. Mourad qui s'est déplacé pour ma fuite d'eau a fait un excellent travail et s'est tenu à son devis au centime près.
+										</p>
+										<div class="client-info">
+											<img src="assets/images/men1.jpg" alt=" " />
+											<h4>Abdellaoui Ahmed</h4>
+											<span>Client</span>
 										</div>
 									</div>
 									<div class="item-owl">
 										<p class="speech">
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id
-											arcu neque, at convallis est felis.Lorem ipsum dolor sit amet, consectetur
-											 adipiscing elit. Pellentesque id arcu neque, at convallis est felis.
+											Moi les travaux c'est vraiment pas mon truc, mais avec l'App je n'ai pas eu de mal à m'en sortir. Une demande de devis et hop 3 jours après j'avais déjà reçu 2 devis d'artisans sérieux.
 										</p>
 										<div class="client-info">
-											<img src="assets/images/t3.jpg" alt=" " />
-											<h4>John Leo</h4>
-											<span>Lorem ipsum dolor</span>
+											<img src="assets/images/avatar.png" alt=" " />
+											<h4>Djbablia Mustapha</h4>
+											<span>Client</span>
 										</div>
 									</div>
 				              </div>

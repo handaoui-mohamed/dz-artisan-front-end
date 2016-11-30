@@ -1,3 +1,8 @@
+.description-logo{
+	margin-top: -50px !important;
+	height: 400px; 
+}
+
 .btn-outline1:disabled{
     cursor: not-allowed;
 }
@@ -11,7 +16,7 @@
 .search-bar{
     color: #222!important;
 }
-
+ 
 .search-job div.btn-group{
     width: 100%
 }
@@ -50,7 +55,7 @@
 	line-height: 1.8em;
 }
 .searching {
-  padding: 30px 30px;
+  padding: 10px 30px;
   width: 60%;
   background: rgba( 7, 56, 85, 0.3);
   margin: 0 auto;
@@ -157,12 +162,21 @@ select option{
 }
 /*-- responsive --*/
 @media(max-width:1280px){
+.searching {
+  padding: 10px 20px;
+  width: 80%;
+}
+
 .delv {
   padding: 0em 0 0 4.3em;
 }
 }
 /*-- responsive --*/
 @media(max-width:1024px){
+.searching {
+  padding: 10px 20px;
+  width: 100%;
+}
 .pick {
   padding: 0em 0em 0 1em;
 }
@@ -204,8 +218,8 @@ li.bt-nn {
 /*-- responsive --*/
 @media(max-width:768px){
 .searching {
-  padding: 20px 20px;
-  width: 60%;
+  padding: 10px 20px;
+  width: 100%;
 }
 .searching_user {
   margin: 4em 0;
@@ -216,10 +230,10 @@ li.bt-nn {
 }
 /*-- responsive --*/
 @media(max-width:640px){
-.searching {
-  padding: 20px 20px;
-  width: 100%;
-}
+	.searching {
+		padding: 10px 20px;
+		width: 100%;
+	}
 }
 /*-- responsive --*/
 @media(max-width:480px){
@@ -469,7 +483,6 @@ a:hover{
       line-height: 1.9em;
     margin-top: 0.7em;
     font-size: 0.9em;
-    color: #E0DFDF;
 }
 .medicinal-w3-grids h4 {
      text-transform: uppercase;
@@ -500,7 +513,7 @@ a.hi-icon.icon3 {
     margin: 0 auto;
 }
 a.hi-icon.icon4 {
-       background: url(../../assets/images/4.png) no-repeat 25px 30px #073855;
+       background: url(../../assets/images/4.png) no-repeat 28px 30px #073855;
     display: block;
     width:120px;
     height:120px;
@@ -516,13 +529,13 @@ a.hi-icon.icon3:hover{
 	   background: url(../../assets/images/3.png) no-repeat 25px 30px #1396e2;
 }
 a.hi-icon.icon4:hover {
-	   background: url(../../assets/images/4.png) no-repeat 25px 30px #1396e2;
+	   background: url(../../assets/images/4.png) no-repeat 28px 30px #1396e2;
 }
 .medicinal-w3-grid {
     margin-bottom:3em;
 }
 .medicinal-w3 {
-     padding: 6em 0 0 0;
+     padding: 0 0 0 0;
     background: url(../../assets/images/middle.jpg) no-repeat 0px 0px;
     min-height: 700px;
     background-size: cover;
@@ -540,7 +553,7 @@ a.hi-icon.icon4:hover {
     position: relative;
     text-align: center;
     color: #fff;
-    background-color:rgba( 7, 56, 85, 0.3);
+    background-color:rgba( 7, 56, 85, 0.5);
     border: 2px solid #1396e2;
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
@@ -583,8 +596,7 @@ a.hi-icon.icon4:hover {
 }
 .client-info span {
     display: block;
-    padding: 5px;
-    color: #444;
+    color: #fff;
 }
 #review {
     padding: 6em 0;
@@ -606,13 +618,25 @@ a.hi-icon.icon4:hover {
 
 }
 @media (max-width: 1366px) {
-
+	.home-msg{
+		font-size: 35px;
+	}
+	.banner-info {
+		padding: 2% 0 0 0 !important;
+	}
 
 }
 @media (max-width:1280px) {
+	.home-msg{
+		font-size: 30px;
+	}
 
 }
 @media (max-width:1080px) {
+	.home-msg{
+		font-size: 25px;
+	}
+
 	.nav-tabs>li>a {
 		margin: 0 1px;
 		padding: 15px 44px;
@@ -738,6 +762,10 @@ a.hi-icon.icon4:hover {
 	}
 }
 @media (max-width:1024px) {
+	.home-msg{
+		font-size: 20px;
+	}
+
 	.nav-tabs>li>a {
 		margin: 0 1px;
 		padding: 15px 44px;
@@ -973,6 +1001,10 @@ a.hi-icon.icon4:hover {
 	}
 }
 @media (max-width:800px) {
+	.home-msg{
+		font-size: 16px;
+	}
+
 	.leave input[type="submit"] {
 
 		width: 17%;
@@ -1017,6 +1049,11 @@ a.hi-icon.icon4:hover {
 	}
 }
 @media (max-width:768px) {
+
+	.home-msg{
+		font-size: 15px;
+	}
+
 	.medicinal-w3-grid {
 		margin-bottom: 2em;
 	}
@@ -1053,6 +1090,11 @@ a.hi-icon.icon4:hover {
 	}
 }
 @media (max-width:736px) {
+
+	.home-msg{
+		font-size: 14px;
+	}
+
 	.logo h1 a {
 		font-size: 1.5em;
 	}
@@ -1156,6 +1198,10 @@ a.hi-icon.icon4:hover {
 }
 @media (max-width:667px) {
 
+	.home-msg{
+		font-size: 13px;
+	}
+
 	.nbs-flexisel-nav-right {
 		left: 41%;
 		background: url(../../assets/images/arrow.png) no-repeat 0px -2px;
@@ -1242,6 +1288,10 @@ a.hi-icon.icon4:hover {
 	}
 }
 @media (max-width:640px) {
+	.home-msg{
+		font-size: 13px;
+	}
+
 	.tab-content>.tab-pane {
 		padding-top: 11px;
 	}
@@ -1394,6 +1444,10 @@ a.hi-icon.icon4:hover {
 	}
 }
 @media (max-width:480px) {
+	.home-msg{
+		font-size: 12px;
+	}
+
 	.search {
 		float: left;
 		width: 52%;
@@ -1482,6 +1536,10 @@ a.hi-icon.icon4:hover {
 	}
 }
 @media (max-width:414px) {
+	.home-msg{
+		font-size: 11px;
+	}
+
 	.team_bottom-grid {
 		margin-top: 2em;
 		float: left;

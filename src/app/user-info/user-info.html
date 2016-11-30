@@ -6,7 +6,7 @@
 	<div class="containercompte">
 		<div class="col-md-8 headercompte-left">
 			<div class="col-sm-5 pro-pic">
-               <img class="img-thumbnail profile-img" ngf-thumbnail="vm.user.profile_image[0].path || vm.default_profile_image">
+               <img class="img-thumbnail profile-img" fallback-src="assets/images/avatar.png" ngf-thumbnail="vm.user.profile_image[0].path || vm.default_profile_image">
         	</div>
 			<div class="col-sm-5 pro-text">
 				<h1>{{ vm.user.full_name || vm.user.username }}</h1>
@@ -67,7 +67,7 @@
 									<div class="thumb" data-toggle="modal" data-target="#myModal"
 									ng-click="vm.selectedFile = file.path; vm.printfile()">
 										<a href="" class="portfolio-link b-link-diagonal b-animate-go" data-toggle="modal">
-                                            <img class="user-work-picture"  ng-src="{{ file.path }}" alt="">
+                                            <img class="user-work-picture" fallback-src="assets/images/default.png" ngf-thumbnail="file.path" alt="">
 										<div class="team_pos">
 											<ul>
 												<li>
@@ -99,7 +99,7 @@
                 <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
             </div>
             <div class="modal-body selected-picture-modal">
-				<img class="selected-picture" ng-src="{{ vm.selectedFile }}" alt="">
+				<img class="selected-picture" fallback-src="assets/images/default.png" ngf-thumbnail="vm.selectedFile" alt="">
             </div>
         </div>
 

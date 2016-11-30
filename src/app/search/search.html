@@ -63,10 +63,13 @@
 
 	<h3 class="text-center search-title">Artisan a votre disposition</h3>
     <div ng-repeat="user in vm.users track by $index" ng-init="$last ? vm.bindDropDownEvents() : angular.noop()">
+        <!-- TODO: add buffer circle (when loading new page)-->
         <div class="col-xs-12 col-sm-6 col-md-4 article-post">
             <div class="headerprofil">
                 <div class="textprofil">
-                    <div ui-sref="userprofile({username: user.username})" class="profile-img" ng-style="{'background': 'url('+ user.profile_image[0].path || vm.default_profile_image +') center center'}"></div>
+                    <div ui-sref="userprofile({username: user.username})" class="profile-img">
+                        <img fallback-src="assets/images/avatar.png" ng-src="{{user.profile_image[0].path}}" ng-show="user.profile_image[0].path">
+                    </div>
                     <h2>{{ user.full_name || user.username }}</h2>
                     <a href="mailto:{{ user.email }}"><p>@{{ user.username }}</p></a>
                 </div>
@@ -105,13 +108,15 @@
     <div class="clearfix"> </div>
     <div class="blog-pagenat">
         <ul>
-            <li><a href="" ng-click="vm.previousPage()">Précédant</a></li>
+            <li><a href="" ng-click="vm.changePage(1)" class="page-navigation">{{ vm.left+vm.left }}</a></li>
+            <li><a href="" ng-click="vm.previousPage()" class="page-navigation">{{ vm.left }}</a></li>
             <li class="search-pages" ng-repeat="page in vm.pages track by $index"
-                ng-if="(vm.current_page >= $index && vm.current_page - $index < 6) ||
-                (vm.current_page <= $index && $index - vm.current_page < 5)">
+                ng-if="(vm.current_page >= $index && vm.current_page - $index < 5) ||
+                (vm.current_page <= $index && $index - vm.current_page < 3)">
                 <a ng-class="{'current-page': vm.current_page === $index + 1}"
                         href="" ng-click="vm.changePage($index + 1)">{{ $index + 1}}</a></li>
-            <li class="search-next-page"><a class="last" href="" ng-click="vm.nextPage()">Suivant</a></li>
+            <li class="search-next-page"><a class="last page-navigation" href="" ng-click="vm.nextPage()">{{ vm.right }}</a></li>
+            <li><a href="" ng-click="vm.changePage(vm.pages.length)" class="page-navigation">{{ vm.right+vm.right }}</a></li>
 
         </ul>
     </div>

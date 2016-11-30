@@ -7,7 +7,6 @@
 
     function SearchController($scope, $log, $rootScope, SearchService, UserService, JobService, ErrorToast){
         var vm = this;
-
         vm.users = [];
         vm.jobs = [];
         vm.selectedJobs = [];
@@ -16,6 +15,8 @@
         vm.current_page = 1;
         vm.default_profile_image = "assets/images/avatar.png";
         vm.activate_search_area = true;
+        vm.left = "<";
+        vm.right = ">";
 
         JobService.get(function(data){
             vm.jobs = data.elements;
@@ -86,7 +87,6 @@
                 updateOnScreenChange();
             }, function(errors){
                 ErrorToast(errors);
-                vm.current_page = 1;
             });
         }
 
@@ -109,13 +109,13 @@
 
         function bindDropDownEvents(){
             $(document).ready(function(){
-            	$.easing.def = "easeOutBounce";
-            	$('li.button a').click(function(e){
-            		var dropDown = $(this).parent().next();
-            		$('.dropdown').not(dropDown).slideUp('slow');
-            		dropDown.slideToggle('slow');
-            		e.preventDefault();
-            	})
+                $.easing.def = "easeOutBounce";
+                $('li.button a').click(function(e){
+                    var dropDown = $(this).parent().next();
+                    $('.dropdown').not(dropDown).slideUp('slow');
+                    dropDown.slideToggle('slow');
+                    e.preventDefault();
+                })
             });
         }
     }

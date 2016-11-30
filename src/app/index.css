@@ -1,3 +1,12 @@
+.center-content{
+	text-align: center !important;
+}
+
+.footer-logo{
+	width: 300px !important;
+	height: auto !important; 
+}
+
 a{
     text-decoration: none!important;
 }
@@ -372,12 +381,10 @@ section.about-us p.abt {
     font-weight: 300;
     line-height: 32px;
     padding-bottom: 20px;
-    color: #A7A7A7;
 }
 /*-- /About Section --*/
 /*-- Services Section --*/
 section.our-services {
-	padding:100px 0;
 	background:url(../assets/images/service.jpg) no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -701,7 +708,7 @@ button.btn-outline1 {
 /*-- Footer --*/
 section.footer {
 	background-color:#073855;
-	padding: 60px 0 50px;
+	padding: 10px 0 50px;
 	color:#fff;
 }
 section.footer h2{
@@ -762,7 +769,7 @@ section.footer .contact-info i.glyphicon.glyphicon-envelope:hover ,section.foote
     line-height: 25px;
     font-weight: 100;
     padding-bottom: 10px;
-    color: #999;
+    color: #fff;
 }
 .footer-right ul.social-icons {
 	margin-top:20px;
